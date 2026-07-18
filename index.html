@@ -15,6 +15,9 @@
             --gray: #2C2C2C;
             --light-gray: #F5F5F5;
             --white: #FFFFFF;
+            --pink-bg: #F8E8E8;
+            --pink-light: #FFF0F0;
+            --rose: #E8D5D5;
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -107,142 +110,239 @@
             cursor: pointer;
         }
 
+        /* NEW HERO - Book on Pink Background */
         .hero {
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             position: relative;
-            background: linear-gradient(135deg, #fafafa 0%, #f0f0f0 100%);
+            background: linear-gradient(135deg, #F5E6E0 0%, #F0E0D8 30%, #E8D5D0 60%, #F5E6E0 100%);
             overflow: hidden;
             padding: 120px 40px 80px;
         }
-        .hero-bg-pattern {
+
+        /* Subtle pattern overlay */
+        .hero::before {
+            content: '';
             position: absolute;
             top: 0; left: 0;
             width: 100%; height: 100%;
-            opacity: 0.03;
-            background-image: 
-                linear-gradient(45deg, var(--gold) 25%, transparent 25%),
-                linear-gradient(-45deg, var(--gold) 25%, transparent 25%),
-                linear-gradient(45deg, transparent 75%, var(--gold) 75%),
-                linear-gradient(-45deg, transparent 75%, var(--gold) 75%);
-            background-size: 60px 60px;
-            background-position: 0 0, 0 30px, 30px -30px, -30px 0px;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(184, 150, 95, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(184, 150, 95, 0.06) 0%, transparent 50%);
+            pointer-events: none;
         }
+
         .hero-content {
-            max-width: 1400px;
+            max-width: 1200px;
             width: 100%;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
+            display: flex;
+            flex-direction: column;
             align-items: center;
             position: relative;
             z-index: 2;
         }
-        .hero-left { text-align: center; }
-        .hero-logo-main {
-            width: 100px; height: 100px;
-            background: var(--gold);
-            border-radius: 16px;
-            margin: 0 auto 30px;
+
+        /* Book Container */
+        .book-container {
+            position: relative;
+            width: 100%;
+            max-width: 900px;
+            perspective: 1500px;
+            margin-bottom: 60px;
+        }
+
+        .book {
+            position: relative;
+            width: 100%;
+            background: linear-gradient(145deg, #FFFFFF 0%, #FAFAFA 50%, #F5F5F5 100%);
+            border-radius: 20px 30px 30px 20px;
+            box-shadow: 
+                0 30px 80px rgba(0,0,0,0.15),
+                0 10px 30px rgba(0,0,0,0.1),
+                inset 0 0 60px rgba(0,0,0,0.02);
+            padding: 50px 60px;
+            transform-style: preserve-3d;
+            transform: rotateY(-3deg) rotateX(2deg);
+            transition: transform 0.6s ease;
+            border-right: 15px solid #E8E0D8;
+        }
+
+        .book:hover {
+            transform: rotateY(-1deg) rotateX(1deg) translateY(-10px);
+            box-shadow: 
+                0 40px 100px rgba(0,0,0,0.2),
+                0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        /* Book spine effect */
+        .book::before {
+            content: '';
+            position: absolute;
+            left: 0; top: 0;
+            width: 25px; height: 100%;
+            background: linear-gradient(90deg, #D4C4B0, #C4B4A0, #D4C4B0);
+            border-radius: 20px 0 0 20px;
+            box-shadow: inset -2px 0 5px rgba(0,0,0,0.1);
+        }
+
+        /* Book pages edge */
+        .book::after {
+            content: '';
+            position: absolute;
+            right: -8px; top: 5px;
+            width: 15px; height: 98%;
+            background: repeating-linear-gradient(
+                0deg,
+                #FFF 0px,
+                #FFF 2px,
+                #DDD 2px,
+                #DDD 4px
+            );
+            border-radius: 0 5px 5px 0;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+        }
+
+        .book-header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-top: 10px;
+        }
+
+        /* Wood grain logo */
+        .book-logo {
+            width: 80px; height: 80px;
+            background: linear-gradient(135deg, #C9A96E, #B8965F, #A67B3D);
+            border-radius: 12px;
+            margin: 0 auto 25px;
             display: flex;
             align-items: center;
             justify-content: center;
             position: relative;
             overflow: hidden;
-            box-shadow: 0 20px 60px rgba(184, 150, 95, 0.3);
+            box-shadow: 0 10px 30px rgba(184, 150, 95, 0.3);
         }
-        .hero-logo-main::before {
+
+        .book-logo::before {
             content: '';
             position: absolute;
             width: 150%; height: 150%;
-            background: repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(255,255,255,0.2) 3px, rgba(255,255,255,0.2) 6px);
-            transform: rotate(45deg);
+            background: repeating-linear-gradient(
+                0deg,
+                transparent,
+                transparent 3px,
+                rgba(255,255,255,0.15) 3px,
+                rgba(255,255,255,0.15) 6px
+            );
+            transform: rotate(30deg);
         }
-        .hero-logo-main::after {
-            content: 'CT';
-            font-size: 2.5rem;
-            font-weight: 900;
-            color: white;
-            position: relative;
-            z-index: 2;
+
+        .book-logo::after {
+            content: '';
+            position: absolute;
+            width: 60%; height: 60%;
+            border: 2px solid rgba(255,255,255,0.4);
+            border-radius: 4px;
         }
-        .hero-title-ar {
-            font-size: 3.5rem;
+
+        .book-title-ar {
+            font-size: 2.8rem;
             font-weight: 900;
             color: var(--dark);
-            margin-bottom: 10px;
-            line-height: 1.2;
+            margin-bottom: 8px;
+            line-height: 1.3;
         }
-        .hero-title-en {
-            font-size: 1.4rem;
+
+        .book-title-en {
+            font-size: 1.2rem;
             color: var(--gold);
             font-weight: 500;
             letter-spacing: 3px;
             text-transform: uppercase;
             margin-bottom: 30px;
         }
-        .hero-contact {
+
+        /* Diamond Grid inside book */
+        .book-images {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin: 30px 0;
+        }
+
+        .book-img-item {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            height: 160px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.4s ease;
+        }
+
+        .book-img-item:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+
+        .book-img-item img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .book-img-item:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Contact info at bottom of book */
+        .book-contact {
             display: flex;
             justify-content: center;
-            gap: 30px;
+            gap: 25px;
             flex-wrap: wrap;
             margin-top: 30px;
+            padding-top: 25px;
+            border-top: 1px solid #EEE;
         }
-        .hero-contact-item {
+
+        .book-contact-item {
             display: flex;
             align-items: center;
             gap: 8px;
-            color: var(--gray);
-            font-size: 0.9rem;
+            color: #666;
+            font-size: 0.85rem;
+            transition: color 0.3s;
         }
-        .hero-contact-item i { color: var(--gold); width: 20px; }
-        .hero-contact-item a { color: var(--gray); text-decoration: none; transition: color 0.3s; }
-        .hero-contact-item a:hover { color: var(--gold); }
-        .vision-2030 {
-            margin-top: 25px;
+
+        .book-contact-item:hover { color: var(--gold); }
+        .book-contact-item i { color: var(--gold); width: 18px; font-size: 0.9rem; }
+        .book-contact-item a { color: inherit; text-decoration: none; }
+
+        .vision-2030-book {
+            margin-top: 20px;
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            padding: 10px 25px;
-            background: rgba(184, 150, 95, 0.1);
+            padding: 8px 20px;
+            background: rgba(184, 150, 95, 0.08);
             border-radius: 50px;
             border: 1px solid var(--gold-light);
         }
-        .vision-2030 span { color: var(--gold); font-weight: 700; font-size: 0.9rem; }
-        .vision-2030 .v2030 { font-size: 1.2rem; font-weight: 900; }
 
-        .hero-right { position: relative; height: 600px; }
-        .diamond-grid { position: relative; width: 100%; height: 100%; }
-        .diamond {
+        .vision-2030-book span { color: var(--gold); font-weight: 700; font-size: 0.85rem; }
+        .vision-2030-book .v2030 { font-size: 1.1rem; font-weight: 900; }
+
+        /* Floating decorative elements */
+        .float-decoration {
             position: absolute;
-            width: 220px; height: 220px;
-            transform: rotate(45deg);
-            overflow: hidden;
-            border-radius: 20px;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
-            transition: all 0.4s ease;
-            cursor: pointer;
+            border-radius: 50%;
+            background: rgba(184, 150, 95, 0.08);
+            pointer-events: none;
         }
-        .diamond:hover {
-            transform: rotate(45deg) scale(1.05);
-            box-shadow: 0 25px 60px rgba(0,0,0,0.2);
-            z-index: 10;
-        }
-        .diamond img {
-            width: 150%; height: 150%;
-            object-fit: cover;
-            transform: rotate(-45deg) translate(-17%, -17%);
-            transition: transform 0.6s ease;
-        }
-        .diamond:hover img { transform: rotate(-45deg) translate(-17%, -17%) scale(1.1); }
-        .diamond-1 { top: 50px; left: 50px; }
-        .diamond-2 { top: 50px; right: 50px; }
-        .diamond-3 { top: 200px; left: 200px; z-index: 2; }
-        .diamond-4 { top: 200px; right: 200px; z-index: 2; }
-        .diamond-5 { top: 350px; left: 50px; }
-        .diamond-6 { top: 350px; right: 50px; }
+        .float-1 { width: 300px; height: 300px; top: 10%; left: -5%; }
+        .float-2 { width: 200px; height: 200px; bottom: 15%; right: -3%; }
+        .float-3 { width: 150px; height: 150px; top: 40%; right: 10%; }
 
         .section { padding: 100px 40px; position: relative; }
         .section-header { text-align: center; margin-bottom: 60px; }
@@ -789,8 +889,10 @@
         .overlay.active { opacity: 1; visibility: visible; }
 
         @media (max-width: 1200px) {
-            .hero-content { grid-template-columns: 1fr; text-align: center; }
-            .hero-right { display: none; }
+            .book-container { max-width: 700px; }
+            .book { padding: 35px 40px; }
+            .book-title-ar { font-size: 2.2rem; }
+            .book-images { grid-template-columns: repeat(2, 1fr); }
             .services-grid { grid-template-columns: repeat(2, 1fr); }
             .why-grid { grid-template-columns: repeat(2, 1fr); }
             .values-grid { grid-template-columns: repeat(3, 1fr); }
@@ -798,7 +900,11 @@
         @media (max-width: 768px) {
             .nav-links { display: none; }
             .mobile-menu-btn { display: block; }
-            .hero-title-ar { font-size: 2.2rem; }
+            .book { padding: 25px 30px; transform: none; }
+            .book:hover { transform: translateY(-5px); }
+            .book-title-ar { font-size: 1.8rem; }
+            .book-images { grid-template-columns: 1fr; }
+            .book-contact { flex-direction: column; gap: 10px; }
             .about-content { grid-template-columns: 1fr; }
             .services-grid { grid-template-columns: 1fr; }
             .expertise-grid { grid-template-columns: 1fr; }
@@ -809,11 +915,14 @@
             .partners-grid { grid-template-columns: repeat(2, 1fr); }
             .footer-content { grid-template-columns: 1fr; text-align: center; }
             .section { padding: 60px 20px; }
+            .float-decoration { display: none; }
         }
         @media (max-width: 480px) {
             .projects-grid { grid-template-columns: 1fr; }
             .partners-grid { grid-template-columns: 1fr; }
             .values-grid { grid-template-columns: 1fr; }
+            .book-title-ar { font-size: 1.5rem; }
+            .book-title-en { font-size: 1rem; }
         }
     </style>
 </head>
@@ -855,59 +964,70 @@
         </ul>
     </div>
 
-    <!-- Hero Section -->
+    <!-- Hero Section - Book Design on Pink Background -->
     <section class="hero">
-        <div class="hero-bg-pattern"></div>
+        <!-- Floating decorative circles -->
+        <div class="float-decoration float-1"></div>
+        <div class="float-decoration float-2"></div>
+        <div class="float-decoration float-3"></div>
+
         <div class="hero-content">
-            <div class="hero-left">
-                <div class="hero-logo-main"></div>
-                <h1 class="hero-title-ar">شركة لمسة للمقاولات العامة</h1>
-                <p class="hero-title-en">Lamssa General Contracting Company</p>
+            <div class="book-container">
+                <div class="book">
+                    <div class="book-header">
+                        <!-- Wood grain logo -->
+                        <div class="book-logo"></div>
 
-                <div class="hero-contact">
-                    <div class="hero-contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <a href="mailto:info@carpenter-touch.com">info@carpenter-touch.com</a>
-                    </div>
-                    <div class="hero-contact-item">
-                        <i class="fas fa-phone"></i>
-                        <a href="tel:0506786367">0506786367</a>
-                    </div>
-                    <div class="hero-contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <a href="mailto:Mohammed@carpenter-touch.com">Mohammed@carpenter-touch.com</a>
-                    </div>
-                    <div class="hero-contact-item">
-                        <i class="fab fa-instagram"></i>
-                        <a href="https://instagram.com/carpenter_touth" target="_blank">@carpenter_touth</a>
-                    </div>
-                </div>
+                        <h1 class="book-title-ar">شركة لمسة للمقاولات العامة</h1>
+                        <p class="book-title-en">Lamssa General Contracting Company</p>
 
-                <div class="vision-2030">
-                    <span>رؤية</span>
-                    <span class="v2030">2030</span>
-                    <span>المملكة العربية السعودية</span>
-                </div>
-            </div>
-            <div class="hero-right">
-                <div class="diamond-grid">
-                    <div class="diamond diamond-1">
-                        <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=500&h=500&fit=crop" alt="Interior Design">
-                    </div>
-                    <div class="diamond diamond-2">
-                        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=500&h=500&fit=crop" alt="Meeting Room">
-                    </div>
-                    <div class="diamond diamond-3">
-                        <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=500&h=500&fit=crop" alt="Living Room">
-                    </div>
-                    <div class="diamond diamond-4">
-                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=500&h=500&fit=crop" alt="Modern Interior">
-                    </div>
-                    <div class="diamond diamond-5">
-                        <img src="https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=500&h=500&fit=crop" alt="Luxury Design">
-                    </div>
-                    <div class="diamond diamond-6">
-                        <img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=500&h=500&fit=crop" alt="Office Space">
+                        <!-- Project Images Grid inside book -->
+                        <div class="book-images">
+                            <div class="book-img-item">
+                                <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=400&h=300&fit=crop" alt="Luxury Living Room">
+                            </div>
+                            <div class="book-img-item">
+                                <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=400&h=300&fit=crop" alt="Meeting Room">
+                            </div>
+                            <div class="book-img-item">
+                                <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=400&h=300&fit=crop" alt="Modern Interior">
+                            </div>
+                            <div class="book-img-item">
+                                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400&h=300&fit=crop" alt="Bedroom Design">
+                            </div>
+                            <div class="book-img-item">
+                                <img src="https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=400&h=300&fit=crop" alt="Dining Area">
+                            </div>
+                            <div class="book-img-item">
+                                <img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=400&h=300&fit=crop" alt="Office Space">
+                            </div>
+                        </div>
+
+                        <!-- Contact Info -->
+                        <div class="book-contact">
+                            <div class="book-contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <a href="mailto:info@carpenter-touch.com">info@carpenter-touch.com</a>
+                            </div>
+                            <div class="book-contact-item">
+                                <i class="fas fa-phone"></i>
+                                <a href="tel:0506786367">0506786367</a>
+                            </div>
+                            <div class="book-contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <a href="mailto:Mohammed@carpenter-touch.com">Mohammed@carpenter-touch.com</a>
+                            </div>
+                            <div class="book-contact-item">
+                                <i class="fab fa-instagram"></i>
+                                <a href="https://instagram.com/carpenter_touth" target="_blank">@carpenter_touth</a>
+                            </div>
+                        </div>
+
+                        <div class="vision-2030-book">
+                            <span>رؤية</span>
+                            <span class="v2030">2030</span>
+                            <span>المملكة العربية السعودية</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1254,14 +1374,12 @@
     </footer>
 
     <script>
-        // Mobile Menu Toggle
         function toggleMenu() {
             document.querySelector('.mobile-menu').classList.toggle('active');
             document.querySelector('.overlay').classList.toggle('active');
             document.body.style.overflow = document.querySelector('.mobile-menu').classList.contains('active') ? 'hidden' : '';
         }
 
-        // Scroll Animation
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
@@ -1279,7 +1397,6 @@
             observer.observe(el);
         });
 
-        // Navbar Scroll Effect
         window.addEventListener('scroll', () => {
             const navbar = document.querySelector('.navbar');
             if (window.scrollY > 100) {
@@ -1291,7 +1408,6 @@
             }
         });
 
-        // Smooth Scroll for Anchor Links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -1305,7 +1421,6 @@
             });
         });
 
-        // Active Navigation Link
         const sections = document.querySelectorAll('section[id]');
         window.addEventListener('scroll', () => {
             let current = '';
@@ -1324,7 +1439,6 @@
             });
         });
 
-        // Loading Animation
         window.addEventListener('load', () => {
             document.body.style.opacity = '0';
             document.body.style.transition = 'opacity 0.5s ease';
