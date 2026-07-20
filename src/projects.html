@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>مشاريعنا | شركة لمسة للمقاولات</title>
+    <link rel="stylesheet" href="../public/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+<!-- ======================= الهيدر ======================= -->
+<nav class="navbar" id="navbar">
+    <div class="nav-container">
+        <a href="index.html" class="nav-logo">
+            <div class="nav-logo-icon"></div>
+            <span>لمسة <span>للمقاولات</span></span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="about.html">من نحن</a></li>
+            <li><a href="services.html">خدماتنا</a></li>
+            <li><a href="expertise.html">تخصصاتنا</a></li>
+            <li><a href="vision.html">رؤيتنا ورسالتنا</a></li>
+            <li><a href="values.html">قيمنا</a></li>
+            <li><a href="why.html">لماذا نحن</a></li>
+            <li><a href="projects.html" style="color: var(--gold);">مشاريعنا</a></li>
+            <li><a href="partners.html">شركاؤنا</a></li>
+            <li><a href="contact.html" class="nav-cta">تواصل معنا</a></li>
+        </ul>
+        <button class="mobile-menu-btn" onclick="toggleMenu()"><i class="fas fa-bars"></i></button>
+    </div>
+</nav>
+
+<div class="overlay" onclick="toggleMenu()"></div>
+
+<div class="mobile-menu">
+    <button class="mobile-menu-close" onclick="toggleMenu()"><i class="fas fa-times"></i></button>
+    <ul class="mobile-menu-links">
+        <li><a href="about.html">من نحن</a></li>
+        <li><a href="services.html">خدماتنا</a></li>
+        <li><a href="expertise.html">تخصصاتنا</a></li>
+        <li><a href="vision.html">رؤيتنا ورسالتنا</a></li>
+        <li><a href="values.html">قيمنا</a></li>
+        <li><a href="why.html">لماذا نحن</a></li>
+        <li><a href="projects.html">مشاريعنا</a></li>
+        <li><a href="partners.html">شركاؤنا</a></li>
+        <li><a href="contact.html" class="mobile-cta">تواصل معنا</a></li>
+    </ul>
+</div>
+
+<!-- ======================= قسم المشاريع ======================= -->
+<section class="section projects" id="projects">
+    <div class="section-header animate-on-scroll">
+        <span class="section-label"><i class="fas fa-images"></i> أعمالنا</span>
+        <h2 class="section-title">لمحة عن <span>مشاريعنا</span></h2>
+        <p class="section-subtitle">نفخر بتقديم مشاريع متنوعة تعكس جودتنا وإتقاننا</p>
+    </div>
+
+    <div class="projects-grid">
+
+        <!-- مشروع 1 -->
+        <div class="project-item animate-on-scroll">
+            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&h=400&fit=crop&q=80" alt="قاعة اجتماعات" loading="lazy" />
+            <div class="project-overlay">
+                <span class="project-tag">تشطيبات</span>
+                <span>قاعة اجتماعات فاخرة</span>
+            </div>
+        </div>
+
+        <!-- مشروع 2 -->
+        <div class="project-item animate-on-scroll animate-delay-1">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&h=400&fit=crop&q=80" alt="جناح فندقي" loading="lazy" />
+            <div class="project-overlay">
+                <span class="project-tag">فنادق</span>
+                <span>جناح فندقي راقٍ</span>
+            </div>
+        </div>
+
+        <!-- مشروع 3 -->
+        <div class="project-item animate-on-scroll animate-delay-2">
+            <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=600&h=400&fit=crop&q=80" alt="غرفة معيشة" loading="lazy" />
+            <div class="project-overlay">
+                <span class="project-tag">سكني</span>
+                <span>غرفة معيشة عصرية</span>
+            </div>
+        </div>
+
+        <!-- مشروع 4 -->
+        <div class="project-item animate-on-scroll">
+            <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=600&h=400&fit=crop&q=80" alt="مكتب تنفيذي" loading="lazy" />
+            <div class="project-overlay">
+                <span class="project-tag">تجاري</span>
+                <span>مكتب تنفيذي</span>
+            </div>
+        </div>
+
+        <!-- مشروع 5 -->
+        <div class="project-item animate-on-scroll animate-delay-1">
+            <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=600&h=400&fit=crop&q=80" alt="صالة استقبال" loading="lazy" />
+            <div class="project-overlay">
+                <span class="project-tag">تشطيبات</span>
+                <span>صالة استقبال</span>
+            </div>
+        </div>
+
+        <!-- مشروع 6 -->
+        <div class="project-item animate-on-scroll animate-delay-2">
+            <img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=600&h=400&fit=crop&q=80" alt="غرفة نوم" loading="lazy" />
+            <div class="project-overlay">
+                <span class="project-tag">سكني</span>
+                <span>غرفة نوم فاخرة</span>
+            </div>
+        </div>
+
+        <!-- مشروع 7 -->
+        <div class="project-item animate-on-scroll">
+            <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600&h=400&fit=crop&q=80" alt="مطعم فاخر" loading="lazy" />
+            <div class="project-overlay">
+                <span class="project-tag">تجاري</span>
+                <span>مطعم فاخر</span>
+            </div>
+        </div>
+
+        <!-- مشروع 8 -->
+        <div class="project-item animate-on-scroll animate-delay-1">
+            <img src="https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=600&h=400&fit=crop&q=80" alt="فيلا سكنية" loading="lazy" />
+            <div class="project-overlay">
+                <span class="project-tag">سكني</span>
+                <span>فيلا سكنية</span>
+            </div>
+        </div>
+
+        <!-- مشروع 9 -->
+        <div class="project-item animate-on-scroll animate-delay-2">
+            <img src="https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?w=600&h=400&fit=crop&q=80" alt="مكتب تجاري" loading="lazy" />
+            <div class="project-overlay">
+                <span class="project-tag">تجاري</span>
+                <span>مكتب تجاري</span>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- ======================= الفوتر ======================= -->
+<footer class="footer">
+    <div class="footer-grid">
+        <div>
+            <div class="footer-brand">
+                <div class="footer-brand-icon">ل</div>
+                <div class="footer-brand-text">شركة لمسة للمقاولات</div>
+            </div>
+            <p class="footer-desc">نقدم حلولاً متكاملة في مجال البناء والتشطيب والتأثيث، بأعلى معايير الجودة والإتقان.</p>
+            <div class="footer-social">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fas fa-envelope"></i></a>
+                <a href="#"><i class="fas fa-phone"></i></a>
+            </div>
+        </div>
+
+        <div>
+            <h4>روابط سريعة</h4>
+            <ul class="footer-links">
+                <li><a href="about.html">من نحن</a></li>
+                <li><a href="services.html">خدماتنا</a></li>
+                <li><a href="projects.html">مشاريعنا</a></li>
+                <li><a href="partners.html">شركاؤنا</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <h4>خدماتنا</h4>
+            <ul class="footer-links">
+                <li><a href="services.html">أعمال البناء</a></li>
+                <li><a href="services.html">أعمال التشطيب</a></li>
+                <li><a href="services.html">التأثيث والتجهيز</a></li>
+                <li><a href="expertise.html">التخصصات</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <h4>تواصل معنا</h4>
+            <div class="footer-contact-item"><i class="fas fa-envelope"></i> info@carpenter-touch.com</div>
+            <div class="footer-contact-item"><i class="fas fa-phone"></i> 0506786367</div>
+            <div class="footer-contact-item"><i class="fab fa-instagram"></i> @carpenter_touth</div>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        &copy; 2026 شركة لمسة للمقاولات العامة | جميع الحقوق محفوظة.
+    </div>
+</footer>
+
+<script src="../public/js/main.js"></script>
+</body>
+</html>

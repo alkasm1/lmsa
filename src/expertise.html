@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>تخصصاتنا | شركة لمسة للمقاولات</title>
+    <link rel="stylesheet" href="../public/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+<!-- ======================= الهيدر ======================= -->
+<nav class="navbar" id="navbar">
+    <div class="nav-container">
+        <a href="index.html" class="nav-logo">
+            <div class="nav-logo-icon"></div>
+            <span>لمسة <span>للمقاولات</span></span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="about.html">من نحن</a></li>
+            <li><a href="services.html">خدماتنا</a></li>
+            <li><a href="expertise.html" style="color: var(--gold);">تخصصاتنا</a></li>
+            <li><a href="projects.html">مشاريعنا</a></li>
+            <li><a href="partners.html">شركاؤنا</a></li>
+            <li><a href="contact.html" class="nav-cta">تواصل معنا</a></li>
+        </ul>
+        <button class="mobile-menu-btn" onclick="toggleMenu()"><i class="fas fa-bars"></i></button>
+    </div>
+</nav>
+
+<div class="overlay" onclick="toggleMenu()"></div>
+
+<div class="mobile-menu">
+    <button class="mobile-menu-close" onclick="toggleMenu()"><i class="fas fa-times"></i></button>
+    <ul class="mobile-menu-links">
+        <li><a href="about.html">من نحن</a></li>
+        <li><a href="services.html">خدماتنا</a></li>
+        <li><a href="expertise.html">تخصصاتنا</a></li>
+        <li><a href="projects.html">مشاريعنا</a></li>
+        <li><a href="partners.html">شركاؤنا</a></li>
+        <li><a href="contact.html" class="mobile-cta">تواصل معنا</a></li>
+    </ul>
+</div>
+
+<!-- ======================= قسم التخصصات ======================= -->
+<section class="section expertise" id="expertise">
+    <div class="section-header animate-on-scroll">
+        <span class="section-label"><i class="fas fa-briefcase"></i> تخصصاتنا</span>
+        <h2 class="section-title">خبراتنا في <span>المجالات</span></h2>
+        <p class="section-subtitle">نتميز بخبرة واسعة في تنفيذ مشاريع متنوعة تشمل</p>
+    </div>
+
+    <div class="expertise-grid">
+
+        <!-- تخصص الفنادق -->
+        <div class="expertise-card animate-on-scroll">
+            <h3><i class="fas fa-hotel"></i> الفنادق</h3>
+            <p class="ar">تصميم وتنفيذ مشاريع فندقية فاخرة توفر تجربة ضيافة استثنائية.</p>
+            <p>Luxury hotel projects designed and executed to deliver outstanding hospitality experiences.</p>
+        </div>
+
+        <!-- تخصص المباني السكنية -->
+        <div class="expertise-card animate-on-scroll animate-delay-1">
+            <h3><i class="fas fa-building"></i> المباني السكنية</h3>
+            <p class="ar">إنشاء وحدات سكنية تجمع بين الراحة العصرية والتصميم الأنيق.</p>
+            <p>Residential developments that combine modern comfort with refined design.</p>
+        </div>
+
+        <!-- تخصص المعارض -->
+        <div class="expertise-card animate-on-scroll animate-delay-2">
+            <h3><i class="fas fa-store"></i> المعارض</h3>
+            <p class="ar">تنفيذ مساحات عرض مبتكرة تعزز الهوية التجارية وتجذب العملاء.</p>
+            <p>Innovative exhibition and showroom spaces that enhance brand identity and customer engagement.</p>
+        </div>
+
+        <!-- تخصص المكاتب التجارية -->
+        <div class="expertise-card animate-on-scroll animate-delay-3">
+            <h3><i class="fas fa-briefcase"></i> المكاتب التجارية</h3>
+            <p class="ar">تصميم بيئات عمل احترافية تدعم الإنتاجية وتعكس صورة الشركات.</p>
+            <p>Professional office environments that boost productivity and reflect corporate identity.</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- ======================= الفوتر ======================= -->
+<footer class="footer">
+    <div class="footer-grid">
+        <div>
+            <div class="footer-brand">
+                <div class="footer-brand-icon">ل</div>
+                <div class="footer-brand-text">شركة لمسة للمقاولات</div>
+            </div>
+            <p class="footer-desc">نقدم حلولاً متكاملة في مجال البناء والتشطيب والتأثيث، بأعلى معايير الجودة والإتقان.</p>
+            <div class="footer-social">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fas fa-envelope"></i></a>
+                <a href="#"><i class="fas fa-phone"></i></a>
+            </div>
+        </div>
+
+        <div>
+            <h4>روابط سريعة</h4>
+            <ul class="footer-links">
+                <li><a href="about.html">من نحن</a></li>
+                <li><a href="services.html">خدماتنا</a></li>
+                <li><a href="projects.html">مشاريعنا</a></li>
+                <li><a href="partners.html">شركاؤنا</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <h4>خدماتنا</h4>
+            <ul class="footer-links">
+                <li><a href="services.html">أعمال البناء</a></li>
+                <li><a href="services.html">أعمال التشطيب</a></li>
+                <li><a href="services.html">التأثيث والتجهيز</a></li>
+                <li><a href="expertise.html">التخصصات</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <h4>تواصل معنا</h4>
+            <div class="footer-contact-item"><i class="fas fa-envelope"></i> info@carpenter-touch.com</div>
+            <div class="footer-contact-item"><i class="fas fa-phone"></i> 0506786367</div>
+            <div class="footer-contact-item"><i class="fab fa-instagram"></i> @carpenter_touth</div>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        &copy; 2026 شركة لمسة للمقاولات العامة | جميع الحقوق محفوظة.
+    </div>
+</footer>
+
+<script src="../public/js/main.js"></script>
+</body>
+</html>

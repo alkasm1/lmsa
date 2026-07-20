@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>خدماتنا | شركة لمسة للمقاولات</title>
+    <link rel="stylesheet" href="../public/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+<!-- ======================= الهيدر ======================= -->
+<nav class="navbar" id="navbar">
+    <div class="nav-container">
+        <a href="index.html" class="nav-logo">
+            <div class="nav-logo-icon"></div>
+            <span>لمسة <span>للمقاولات</span></span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="about.html">من نحن</a></li>
+            <li><a href="services.html" style="color: var(--gold);">خدماتنا</a></li>
+            <li><a href="expertise.html">تخصصاتنا</a></li>
+            <li><a href="projects.html">مشاريعنا</a></li>
+            <li><a href="partners.html">شركاؤنا</a></li>
+            <li><a href="contact.html" class="nav-cta">تواصل معنا</a></li>
+        </ul>
+        <button class="mobile-menu-btn" onclick="toggleMenu()"><i class="fas fa-bars"></i></button>
+    </div>
+</nav>
+
+<div class="overlay" onclick="toggleMenu()"></div>
+
+<div class="mobile-menu">
+    <button class="mobile-menu-close" onclick="toggleMenu()"><i class="fas fa-times"></i></button>
+    <ul class="mobile-menu-links">
+        <li><a href="about.html">من نحن</a></li>
+        <li><a href="services.html">خدماتنا</a></li>
+        <li><a href="expertise.html">تخصصاتنا</a></li>
+        <li><a href="projects.html">مشاريعنا</a></li>
+        <li><a href="partners.html">شركاؤنا</a></li>
+        <li><a href="contact.html" class="mobile-cta">تواصل معنا</a></li>
+    </ul>
+</div>
+
+<!-- ======================= قسم الخدمات ======================= -->
+<section class="section services" id="services">
+    <div class="section-header animate-on-scroll">
+        <span class="section-label"><i class="fas fa-tools"></i> خدماتنا</span>
+        <h2 class="section-title">ما نقدمه من <span>خدمات</span></h2>
+        <p class="section-subtitle">نقدم منظومة متكاملة من الخدمات عبر أقسام متخصصة</p>
+    </div>
+
+    <div class="services-grid">
+
+        <!-- بطاقة الخدمة 1 -->
+        <div class="service-card animate-on-scroll">
+            <div class="service-card-img">
+                <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600&h=400&fit=crop&q=80" alt="أعمال البناء" loading="lazy" />
+                <div class="service-card-icon"><i class="fas fa-hard-hat"></i></div>
+            </div>
+            <div class="service-card-body">
+                <h3>أعمال البناء</h3>
+                <h3 class="en">Construction</h3>
+                <p>تنفيذ المشاريع السكنية والتجارية وفق أعلى معايير الجودة، باستخدام أحدث التقنيات والمواد المعتمدة.</p>
+                <p class="en">Execution of residential and commercial projects in compliance with the highest quality standards.</p>
+            </div>
+        </div>
+
+        <!-- بطاقة الخدمة 2 -->
+        <div class="service-card animate-on-scroll animate-delay-1">
+            <div class="service-card-img">
+                <img src="https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?w=600&h=400&fit=crop&q=80" alt="أعمال التشطيب" loading="lazy" />
+                <div class="service-card-icon"><i class="fas fa-paint-roller"></i></div>
+            </div>
+            <div class="service-card-body">
+                <h3>أعمال التشطيب</h3>
+                <h3 class="en">Finishing Works</h3>
+                <p>تشطيبات داخلية وخارجية راقية تعكس الذوق المعماري الحديث، مع اهتمام بالغ بأدق التفاصيل.</p>
+                <p class="en">High-end interior and exterior finishing solutions with meticulous attention to detail.</p>
+            </div>
+        </div>
+
+        <!-- بطاقة الخدمة 3 -->
+        <div class="service-card animate-on-scroll animate-delay-2">
+            <div class="service-card-img">
+                <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=600&h=400&fit=crop&q=80" alt="التأثيث والتجهيز" loading="lazy" />
+                <div class="service-card-icon"><i class="fas fa-couch"></i></div>
+            </div>
+            <div class="service-card-body">
+                <h3>التأثيث والتجهيز</h3>
+                <h3 class="en">Furnishing & Fit-Out</h3>
+                <p>تصميم وتوريد وتنفيذ أعمال الأثاث والتجهيز بما يتماشى مع هوية المشروع ويحقق التكامل الوظيفي والجمالي.</p>
+                <p class="en">Comprehensive furnishing and fit-out solutions tailored to align with project identity.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- ======================= الفوتر ======================= -->
+<footer class="footer">
+    <div class="footer-grid">
+        <div>
+            <div class="footer-brand">
+                <div class="footer-brand-icon">ل</div>
+                <div class="footer-brand-text">شركة لمسة للمقاولات</div>
+            </div>
+            <p class="footer-desc">نقدم حلولاً متكاملة في مجال البناء والتشطيب والتأثيث، بأعلى معايير الجودة والإتقان.</p>
+            <div class="footer-social">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fas fa-envelope"></i></a>
+                <a href="#"><i class="fas fa-phone"></i></a>
+            </div>
+        </div>
+
+        <div>
+            <h4>روابط سريعة</h4>
+            <ul class="footer-links">
+                <li><a href="about.html">من نحن</a></li>
+                <li><a href="services.html">خدماتنا</a></li>
+                <li><a href="projects.html">مشاريعنا</a></li>
+                <li><a href="partners.html">شركاؤنا</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <h4>خدماتنا</h4>
+            <ul class="footer-links">
+                <li><a href="services.html">أعمال البناء</a></li>
+                <li><a href="services.html">أعمال التشطيب</a></li>
+                <li><a href="services.html">التأثيث والتجهيز</a></li>
+                <li><a href="expertise.html">التخصصات</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <h4>تواصل معنا</h4>
+            <div class="footer-contact-item"><i class="fas fa-envelope"></i> info@carpenter-touch.com</div>
+            <div class="footer-contact-item"><i class="fas fa-phone"></i> 0506786367</div>
+            <div class="footer-contact-item"><i class="fab fa-instagram"></i> @carpenter_touth</div>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        &copy; 2026 شركة لمسة للمقاولات العامة | جميع الحقوق محفوظة.
+    </div>
+</footer>
+
+<script src="../public/js/main.js"></script>
+</body>
+</html>
+
