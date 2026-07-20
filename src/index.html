@@ -1,22 +1,32 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <title>شركة لمسة للمقاولات العامة</title>
-    <link rel="stylesheet" href="../public/css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="شركة لمسة للمقاولات العامة - رائدة في عالم البناء والتطوير العمراني منذ 2009">
+<meta name="keywords" content="مقاولات, بناء, تشطيب, تأثيث, فنادق, مباني سكنية, معارض, مكاتب تجارية">
+<meta name="author" content="Lamssa General Contracting">
+<title>شركة لمسة للمقاولات العامة | Lamssa General Contracting</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<!-- ======================= الهيدر ======================= -->
+<!-- Preloader -->
+<div class="preloader" id="preloader">
+    <div class="preloader-logo">ل</div>
+    <div class="preloader-bar"><div class="preloader-bar-fill" id="preloader-fill"></div></div>
+    <div class="preloader-text">جار التحميل...</div>
+</div>
+
+<!-- Navigation -->
 <nav class="navbar" id="navbar">
     <div class="nav-container">
         <a href="index.html" class="nav-logo">
-            <div class="nav-logo-icon"></div>
+            <div class="nav-logo-icon">ل</div>
             <span>لمسة <span>للمقاولات</span></span>
         </a>
         <ul class="nav-links">
@@ -27,15 +37,16 @@
             <li><a href="partners.html">شركاؤنا</a></li>
             <li><a href="contact.html" class="nav-cta">تواصل معنا</a></li>
         </ul>
-        <button class="mobile-menu-btn" onclick="toggleMenu()"><i class="fas fa-bars"></i></button>
+        <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="القائمة"><i class="fas fa-bars"></i></button>
     </div>
 </nav>
 
+<!-- Mobile Menu -->
 <div class="overlay" onclick="toggleMenu()"></div>
-
 <div class="mobile-menu">
-    <button class="mobile-menu-close" onclick="toggleMenu()"><i class="fas fa-times"></i></button>
+    <button class="mobile-menu-close" onclick="toggleMenu()" aria-label="إغلاق"><i class="fas fa-times"></i></button>
     <ul class="mobile-menu-links">
+        <li><a href="index.html">الرئيسية</a></li>
         <li><a href="about.html">من نحن</a></li>
         <li><a href="services.html">خدماتنا</a></li>
         <li><a href="expertise.html">تخصصاتنا</a></li>
@@ -45,13 +56,12 @@
     </ul>
 </div>
 
-<!-- ======================= الهيرو ======================= -->
+<!-- Hero Section -->
 <section class="hero" id="home">
     <div class="hero-particles">
         <div class="particle"></div><div class="particle"></div><div class="particle"></div>
         <div class="particle"></div><div class="particle"></div><div class="particle"></div>
     </div>
-
     <div class="hero-content">
         <div class="hero-badge"><i class="fas fa-star"></i> مقاول معتمد منذ 2009</div>
         <div class="hero-logo">ل</div>
@@ -59,38 +69,417 @@
         <p class="hero-title-en">Lamssa General Contracting Company</p>
         <div class="hero-divider"></div>
         <div class="hero-year">2026</div>
-
         <div class="hero-buttons">
             <a href="contact.html" class="hero-btn hero-btn-primary"><i class="fas fa-phone"></i> تواصل معنا</a>
             <a href="projects.html" class="hero-btn hero-btn-secondary"><i class="fas fa-images"></i> مشاريعنا</a>
         </div>
     </div>
-
-    <div class="hero-scroll">
-        <span>استكشف المزيد</span>
-        <i class="fas fa-chevron-down"></i>
+    <div class="hero-scroll" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">
+        <span>استكشف المزيد</span><i class="fas fa-chevron-down"></i>
     </div>
 </section>
 
-<!-- ======================= الإحصائيات ======================= -->
+<!-- Stats Bar -->
 <div class="stats-bar">
-    <div class="stat-item"><div class="stat-number" data-target="15">0</div><div class="stat-label">سنوات الخبرة</div></div>
-    <div class="stat-item"><div class="stat-number" data-target="200">0</div><div class="stat-label">مشروع منجز</div></div>
-    <div class="stat-item"><div class="stat-number" data-target="50">0</div><div class="stat-label">عميل راضٍ</div></div>
-    <div class="stat-item"><div class="stat-number" data-target="120">0</div><div class="stat-label">فرد في الفريق</div></div>
+    <div class="stat-item animate-on-scroll"><div class="stat-number" data-target="15">0</div><div class="stat-label">سنوات الخبرة</div></div>
+    <div class="stat-item animate-on-scroll animate-delay-1"><div class="stat-number" data-target="200">0</div><div class="stat-label">مشروع منجز</div></div>
+    <div class="stat-item animate-on-scroll animate-delay-2"><div class="stat-number" data-target="50">0</div><div class="stat-label">عميل راضٍ</div></div>
+    <div class="stat-item animate-on-scroll animate-delay-3"><div class="stat-number" data-target="120">0</div><div class="stat-label">فرد في الفريق</div></div>
 </div>
 
-<!-- ======================= CTA ======================= -->
-<section class="cta-section">
-    <div class="cta-content">
-        <h2>هل لديك مشروع في <span>البال؟</span></h2>
-        <p>نحن هنا لتحويل رؤيتك إلى واقع ملموس. تواصل معنا اليوم واحصل على استشارة مجانية لمشروعك القادم.</p>
-        <a href="contact.html" class="cta-btn"><i class="fas fa-paper-plane"></i> ابدأ مشروعك الآن</a>
+<!-- About Section -->
+<section class="section about" id="about">
+    <div class="section-header animate-on-scroll">
+        <span class="section-label"><i class="fas fa-building"></i> من نحن</span>
+        <h2 class="section-title">شركة <span>لمسة</span> للمقاولات</h2>
+        <p class="section-subtitle">رائدة في عالم البناء والتطوير العمراني</p>
+    </div>
+    <div class="about-grid">
+        <div class="about-image-wrap animate-on-scroll">
+            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&h=600&fit=crop&q=80" alt="مشروع بناء" loading="lazy" />
+            <div class="about-image-badge"><i class="fas fa-medal"></i> أكثر من 15 عاماً من التميز</div>
+        </div>
+        <div class="about-text animate-on-scroll">
+            <h3>شركة لمسة للمقاولات العامة</h3>
+            <p>شركة لمسة للمقاولات العامة هي كيان رائد في عالم البناء والتطوير العمراني، نقدم حلولاً متكاملة تبدأ من الفكرة والتصميم، وصولاً إلى التنفيذ والتسليم بأعلى درجات الإتقان. نؤمن بأن كل مشروع هو انعكاس لهوية عملائنا، لذلك نحرص على تحويل الرؤى إلى واقع معماري متكامل، يجمع بين الجودة الهندسية واللمسة الجمالية الراقية.</p>
+            <p>نعمل وفق منهجية احترافية قائمة على الدقة، والابتكار، والالتزام الصارم بأعلى المعايير العالمية في كل مرحلة من مراحل المشروع.</p>
+            <div class="about-features">
+                <div class="about-feature"><i class="fas fa-gem"></i><span>جودة عالمية</span></div>
+                <div class="about-feature"><i class="fas fa-lightbulb"></i><span>حلول مبتكرة</span></div>
+                <div class="about-feature"><i class="fas fa-clock"></i><span>التزام بالمواعيد</span></div>
+                <div class="about-feature"><i class="fas fa-ruler-combined"></i><span>دقة في التنفيذ</span></div>
+            </div>
+            <p class="en">Lamssa General Contracting Company is a distinguished name in the construction and development sector, delivering fully integrated solutions that span from concept and design to execution and final handover with exceptional precision. We believe that every project reflects the identity of our clients, therefore we are committed to transforming visions into refined architectural realities that combine engineering excellence with aesthetic sophistication.</p>
+            <div style="margin-top: 24px;">
+                <a href="about.html" class="hero-btn hero-btn-primary" style="padding: 12px 32px; font-size: 0.95rem;"><i class="fas fa-arrow-left"></i> اكتشف المزيد</a>
+            </div>
+        </div>
     </div>
 </section>
 
-<!-- ======================= الفوتر ======================= -->
-<footer class="footer">
+<!-- Services Section -->
+<section class="section services" id="services">
+    <div class="section-header animate-on-scroll">
+        <span class="section-label"><i class="fas fa-tools"></i> خدماتنا</span>
+        <h2 class="section-title">ما نقدمه من <span>خدمات</span></h2>
+        <p class="section-subtitle">نقدم منظومة متكاملة من الخدمات عبر أقسام متخصصة</p>
+    </div>
+    <div class="services-grid">
+        <div class="service-card animate-on-scroll">
+            <div class="service-card-img">
+                <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600&h=400&fit=crop&q=80" alt="أعمال البناء" loading="lazy" />
+                <div class="service-card-icon"><i class="fas fa-hard-hat"></i></div>
+            </div>
+            <div class="service-card-body">
+                <h3>أعمال البناء</h3>
+                <h3 class="en">Construction</h3>
+                <p>تنفيذ المشاريع السكنية والتجارية وفق أعلى معايير الجودة، باستخدام أحدث التقنيات والمواد المعتمدة.</p>
+                <p class="en">Execution of residential and commercial projects in compliance with the highest quality standards, utilizing advanced technologies and certified materials.</p>
+            </div>
+        </div>
+        <div class="service-card animate-on-scroll animate-delay-1">
+            <div class="service-card-img">
+                <img src="https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?w=600&h=400&fit=crop&q=80" alt="أعمال التشطيب" loading="lazy" />
+                <div class="service-card-icon"><i class="fas fa-paint-roller"></i></div>
+            </div>
+            <div class="service-card-body">
+                <h3>أعمال التشطيب</h3>
+                <h3 class="en">Finishing Works</h3>
+                <p>تشطيبات داخلية وخارجية راقية تعكس الذوق المعماري الحديث، مع اهتمام بالغ بأدق التفاصيل.</p>
+                <p class="en">High-end interior and exterior finishing solutions that reflect contemporary architectural elegance, with meticulous attention to detail.</p>
+            </div>
+        </div>
+        <div class="service-card animate-on-scroll animate-delay-2">
+            <div class="service-card-img">
+                <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=600&h=400&fit=crop&q=80" alt="التأثيث والتجهيز" loading="lazy" />
+                <div class="service-card-icon"><i class="fas fa-couch"></i></div>
+            </div>
+            <div class="service-card-body">
+                <h3>التأثيث والتجهيز</h3>
+                <h3 class="en">Furnishing &amp; Fit-Out</h3>
+                <p>تصميم وتوريد وتنفيذ أعمال الأثاث والتجهيز بما يتماشى مع هوية المشروع ويحقق التكامل الوظيفي والجمالي.</p>
+                <p class="en">Comprehensive furnishing and fit-out solutions tailored to align with the project identity while achieving both functional and aesthetic harmony.</p>
+            </div>
+        </div>
+    </div>
+    <div style="text-align: center; margin-top: 50px;">
+        <a href="services.html" class="hero-btn hero-btn-primary" style="padding: 14px 40px;"><i class="fas fa-arrow-left"></i> جميع الخدمات</a>
+    </div>
+</section>
+
+<!-- Expertise Section -->
+<section class="section expertise" id="expertise">
+    <div class="section-header animate-on-scroll">
+        <span class="section-label"><i class="fas fa-briefcase"></i> تخصصاتنا</span>
+        <h2 class="section-title">خبراتنا في <span>المجالات</span></h2>
+        <p class="section-subtitle">نتميز بخبرة واسعة في تنفيذ مشاريع متنوعة تشمل</p>
+    </div>
+    <div class="expertise-grid">
+        <div class="expertise-card animate-on-scroll">
+            <h3><i class="fas fa-hotel"></i> الفنادق</h3>
+            <p class="ar">تصميم وتنفيذ مشاريع فندقية فاخرة توفر تجربة ضيافة استثنائية.</p>
+            <p>Luxury hotel projects designed and executed to deliver outstanding hospitality experiences.</p>
+        </div>
+        <div class="expertise-card animate-on-scroll animate-delay-1">
+            <h3><i class="fas fa-building"></i> المباني السكنية</h3>
+            <p class="ar">إنشاء وحدات سكنية تجمع بين الراحة العصرية والتصميم الأنيق.</p>
+            <p>Residential developments that combine modern comfort with refined design.</p>
+        </div>
+        <div class="expertise-card animate-on-scroll animate-delay-2">
+            <h3><i class="fas fa-store"></i> المعارض</h3>
+            <p class="ar">تنفيذ مساحات عرض مبتكرة تعزز الهوية التجارية وتجذب العملاء.</p>
+            <p>Innovative exhibition and showroom spaces that enhance brand identity and customer engagement.</p>
+        </div>
+        <div class="expertise-card animate-on-scroll animate-delay-3">
+            <h3><i class="fas fa-briefcase"></i> المكاتب التجارية</h3>
+            <p class="ar">تصميم بيئات عمل احترافية تدعم الإنتاجية وتعكس صورة الشركات.</p>
+            <p>Professional office environments that boost productivity and reflect corporate identity.</p>
+        </div>
+    </div>
+    <div style="text-align: center; margin-top: 50px;">
+        <a href="expertise.html" class="hero-btn hero-btn-secondary" style="background: transparent; border: 2px solid var(--gold); color: var(--gold);"><i class="fas fa-arrow-left"></i> المزيد من التخصصات</a>
+    </div>
+</section>
+
+<!-- Vision & Mission Section -->
+<section class="section vision-mission" id="vision">
+    <div class="section-header animate-on-scroll">
+        <span class="section-label"><i class="fas fa-compass"></i> رؤيتنا ورسالتنا</span>
+        <h2 class="section-title">نحو <span>المستقبل</span></h2>
+    </div>
+    <div class="vm-grid">
+        <div class="vm-card animate-on-scroll">
+            <div class="vm-icon"><i class="fas fa-eye"></i></div>
+            <h3 class="ar">رؤيتنا</h3>
+            <h3>Our Vision</h3>
+            <p>أن نكون مرجعاً رائداً في قطاع المقاولات العامة، من خلال تقديم مشاريع استثنائية تتجاوز التوقعات وتُحدث أثراً دائماً في المشهد العمراني.</p>
+            <p class="en">To become a leading benchmark in the contracting industry by delivering exceptional projects that exceed expectations and leave a lasting impact.</p>
+        </div>
+        <div class="vm-card animate-on-scroll animate-delay-1">
+            <div class="vm-icon"><i class="fas fa-bullseye"></i></div>
+            <h3 class="ar">رسالتنا</h3>
+            <h3>Our Mission</h3>
+            <p>نلتزم بتقديم حلول متكاملة ذات جودة عالية، من خلال فريق عمل متخصص، واتباع أفضل الممارسات العالمية، لضمان تحقيق أعلى مستويات رضا العملاء.</p>
+            <p class="en">We are committed to delivering high-quality, integrated solutions through a skilled team and best-in-class practices to ensure maximum client satisfaction.</p>
+        </div>
+    </div>
+    <div style="text-align: center; margin-top: 50px;">
+        <a href="vision.html" class="hero-btn hero-btn-primary" style="padding: 14px 40px;"><i class="fas fa-arrow-left"></i> رؤيتنا بالتفصيل</a>
+    </div>
+</section>
+
+<!-- Values Section -->
+<section class="section values" id="values">
+    <div class="section-header animate-on-scroll">
+        <span class="section-label"><i class="fas fa-heart"></i> قيمنا</span>
+        <h2 class="section-title">مبادئنا <span>الأساسية</span></h2>
+    </div>
+    <div class="values-grid">
+        <div class="value-card animate-on-scroll">
+            <div class="value-icon"><i class="fas fa-award"></i></div>
+            <h4 class="ar">الجودة</h4>
+            <h4>Quality</h4>
+            <p>التزامنا بالإتقان في كل تفصيلة</p>
+        </div>
+        <div class="value-card animate-on-scroll animate-delay-1">
+            <div class="value-icon"><i class="fas fa-handshake"></i></div>
+            <h4 class="ar">الالتزام</h4>
+            <h4>Commitment</h4>
+            <p>احترام الوقت والوعود</p>
+        </div>
+        <div class="value-card animate-on-scroll animate-delay-2">
+            <div class="value-icon"><i class="fas fa-lightbulb"></i></div>
+            <h4 class="ar">الابتكار</h4>
+            <h4>Innovation</h4>
+            <p>حلول إبداعية متجددة</p>
+        </div>
+        <div class="value-card animate-on-scroll animate-delay-3">
+            <div class="value-icon"><i class="fas fa-shield-alt"></i></div>
+            <h4 class="ar">الشفافية</h4>
+            <h4>Transparency</h4>
+            <p>وضوح في التعامل</p>
+        </div>
+        <div class="value-card animate-on-scroll animate-delay-4">
+            <div class="value-icon"><i class="fas fa-heart"></i></div>
+            <h4 class="ar">رضا العميل</h4>
+            <h4>Satisfaction</h4>
+            <p>هدفنا الأول</p>
+        </div>
+    </div>
+    <div style="text-align: center; margin-top: 50px;">
+        <a href="values.html" class="hero-btn hero-btn-primary" style="padding: 14px 40px;"><i class="fas fa-arrow-left"></i> قيمنا بالتفصيل</a>
+    </div>
+</section>
+
+<!-- Why Lamssa Section -->
+<section class="section why-lamssa" id="why">
+    <div class="section-header animate-on-scroll">
+        <span class="section-label"><i class="fas fa-trophy"></i> لماذا نحن</span>
+        <h2 class="section-title">لماذا <span style="color: var(--gold);">لمسة</span>؟</h2>
+        <p class="section-subtitle">خبرة مثبتة في قطاعات متعددة</p>
+    </div>
+    <div class="why-grid">
+        <div class="why-card animate-on-scroll">
+            <span class="why-number">01</span>
+            <div class="why-icon"><i class="fas fa-users"></i></div>
+            <h3 class="ar">فريق هندسي وفني عالي الكفاءة</h3>
+            <h3>Highly Qualified Teams</h3>
+            <p>فريق متخصص ذو خبرة واسعة في مجال المقاولات والتشطيبات</p>
+        </div>
+        <div class="why-card animate-on-scroll animate-delay-1">
+            <span class="why-number">02</span>
+            <div class="why-icon"><i class="fas fa-gem"></i></div>
+            <h3 class="ar">جودة تنفيذ تفوق التوقعات</h3>
+            <h3>Superior Quality</h3>
+            <p>التزام صارم بالجدول الزمني وجودة التنفيذ</p>
+        </div>
+        <div class="why-card animate-on-scroll animate-delay-2">
+            <span class="why-number">03</span>
+            <div class="why-icon"><i class="fas fa-clock"></i></div>
+            <h3 class="ar">التزام صارم بالجداول الزمنية</h3>
+            <h3>On-Time Delivery</h3>
+            <p>حلول متكاملة تحت سقف واحد من التصميم إلى التسليم</p>
+        </div>
+        <div class="why-card animate-on-scroll animate-delay-3">
+            <span class="why-number">04</span>
+            <div class="why-icon"><i class="fas fa-layer-group"></i></div>
+            <h3 class="ar">حلول متكاملة تحت سقف واحد</h3>
+            <h3>Integrated Solutions</h3>
+            <p>تجربة مثبتة في قطاعات متعددة من المشاريع</p>
+        </div>
+    </div>
+    <div style="text-align: center; margin-top: 50px;">
+        <a href="why.html" class="hero-btn hero-btn-secondary" style="background: transparent; border: 2px solid var(--gold); color: var(--gold);"><i class="fas fa-arrow-left"></i> اكتشف المزيد</a>
+    </div>
+</section>
+
+<!-- Projects Section -->
+<section class="section projects" id="projects">
+    <div class="section-header animate-on-scroll">
+        <span class="section-label"><i class="fas fa-images"></i> أعمالنا</span>
+        <h2 class="section-title">لمحة عن <span>مشاريعنا</span></h2>
+        <p class="section-subtitle">نفخر بتقديم مشاريع متنوعة تعكس جودتنا وإتقاننا</p>
+    </div>
+    <div class="projects-grid">
+        <div class="project-item animate-on-scroll">
+            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&h=400&fit=crop&q=80" alt="قاعة اجتماعات" loading="lazy" />
+            <div class="project-overlay">
+                <span class="project-tag">تشطيبات</span>
+                <span>قاعة اجتماعات فاخرة</span>
+            </div>
+        </div>
+        <div class="project-item animate-on-scroll animate-delay-1">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&h=400&fit=crop&q=80" alt="جناح فندقي" loading="lazy" />
+            <div class="project-overlay">
+                <span class="project-tag">فنادق</span>
+                <span>جناح فندقي راقٍ</span>
+            </div>
+        </div>
+        <div class="project-item animate-on-scroll animate-delay-2">
+            <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=600&h=400&fit=crop&q=80" alt="غرفة معيشة" loading="lazy" />
+            <div class="project-overlay">
+                <span class="project-tag">سكني</span>
+                <span>غرفة معيشة عصرية</span>
+            </div>
+        </div>
+        <div class="project-item animate-on-scroll">
+            <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=600&h=400&fit=crop&q=80" alt="مكتب تنفيذي" loading="lazy" />
+            <div class="project-overlay">
+                <span class="project-tag">تجاري</span>
+                <span>مكتب تنفيذي</span>
+            </div>
+        </div>
+        <div class="project-item animate-on-scroll animate-delay-1">
+            <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=600&h=400&fit=crop&q=80" alt="صالة استقبال" loading="lazy" />
+            <div class="project-overlay">
+                <span class="project-tag">تشطيبات</span>
+                <span>صالة استقبال</span>
+            </div>
+        </div>
+        <div class="project-item animate-on-scroll animate-delay-2">
+            <img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=600&h=400&fit=crop&q=80" alt="غرفة نوم" loading="lazy" />
+            <div class="project-overlay">
+                <span class="project-tag">سكني</span>
+                <span>غرفة نوم فاخرة</span>
+            </div>
+        </div>
+    </div>
+    <div style="text-align: center; margin-top: 50px;">
+        <a href="projects.html" class="hero-btn hero-btn-primary" style="padding: 14px 40px;"><i class="fas fa-arrow-left"></i> جميع المشاريع</a>
+    </div>
+</section>
+
+<!-- Testimonials Section -->
+<section class="testimonials" id="testimonials">
+    <div class="section-header animate-on-scroll">
+        <span class="section-label"><i class="fas fa-comments"></i> آراء العملاء</span>
+        <h2 class="section-title">ما يقوله <span>عملاؤنا</span></h2>
+        <p class="section-subtitle">ثقة عملائنا هي أعلى شهادة على جودة أعمالنا</p>
+    </div>
+    <div class="testimonials-grid">
+        <div class="testimonial-card animate-on-scroll">
+            <div class="testimonial-stars">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <p class="testimonial-text">تعاملت مع شركة لمسة في مشروع فندقي كبير، وكانت النتائج مذهلة. الفريق محترف جداً والالتزام بالمواعيد كان ممتازاً.</p>
+            <div class="testimonial-author">
+                <div class="testimonial-avatar">م</div>
+                <div class="testimonial-info">
+                    <h4>محمد العتيبي</h4>
+                    <span>مدير عام - Kempinski Al Othman</span>
+                </div>
+            </div>
+        </div>
+        <div class="testimonial-card animate-on-scroll animate-delay-1">
+            <div class="testimonial-stars">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <p class="testimonial-text">الجودة والدقة في التنفيذ تجعل لمسة الخيار الأول لدينا في جميع مشاريعنا. فريق متعاون ومبدع.</p>
+            <div class="testimonial-author">
+                <div class="testimonial-avatar">أ</div>
+                <div class="testimonial-info">
+                    <h4>أحمد السالم</h4>
+                    <span>مهندس مشاريع - أرامكو السعودية</span>
+                </div>
+            </div>
+        </div>
+        <div class="testimonial-card animate-on-scroll animate-delay-2">
+            <div class="testimonial-stars">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <p class="testimonial-text">مشروع فيلتنا السكنية كان تحفة فنية بفضل لمسة. اهتمامهم بالتفاصيل الصغيرة يجعل الفرق الكبير.</p>
+            <div class="testimonial-author">
+                <div class="testimonial-avatar">خ</div>
+                <div class="testimonial-info">
+                    <h4>خالد الشمري</h4>
+                    <span>صاحب فيلا سكنية</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="text-align: center; margin-top: 50px;">
+        <a href="testimonials.html" class="hero-btn hero-btn-primary" style="padding: 14px 40px;"><i class="fas fa-arrow-left"></i> المزيد من الآراء</a>
+    </div>
+</section>
+
+<!-- Partners Section -->
+<section class="section partners" id="partners">
+    <div class="section-header animate-on-scroll">
+        <span class="section-label"><i class="fas fa-handshake"></i> شركاؤنا</span>
+        <h2 class="section-title">شركاء <span>النجاح</span></h2>
+        <p class="section-subtitle">نفخر بالتعاون مع كبرى المؤسسات والشركات</p>
+    </div>
+    <div class="partners-grid">
+        <div class="partner-item animate-on-scroll">
+            <span class="logo-text">الهيئة الملكية للجبيل وينبع</span>
+        </div>
+        <div class="partner-item animate-on-scroll animate-delay-1">
+            <span class="logo-text" style="color: #006C35; font-weight: 800;">أرامكو السعودية</span>
+        </div>
+        <div class="partner-item animate-on-scroll animate-delay-2">
+            <span class="logo-text" style="color: #0056A6; font-weight: 800; font-size: 1.5rem;">Haier</span>
+        </div>
+        <div class="partner-item animate-on-scroll animate-delay-3">
+            <span class="logo-text">دليل الشبكة <small>LEEL ALSHABAKA</small></span>
+        </div>
+        <div class="partner-item animate-on-scroll">
+            <span class="logo-text" style="color: #006D4C; font-weight: 800;">معادن <small>MA'ADEN</small></span>
+        </div>
+        <div class="partner-item animate-on-scroll animate-delay-1">
+            <span class="logo-text" style="color: #00A9A4; font-weight: 800;">المانع <small>almana</small></span>
+        </div>
+        <div class="partner-item animate-on-scroll animate-delay-2">
+            <span class="logo-text">
+                <i class="fas fa-horse" style="color: var(--gold); font-size: 1.4rem; display: block; margin-bottom: 4px;"></i>
+                Kempinski Al Othman Hotel
+            </span>
+        </div>
+        <div class="partner-item animate-on-scroll animate-delay-3">
+            <span class="logo-text" style="font-weight: 300; letter-spacing: 2px;">
+                <span style="color: var(--gold); font-weight: 700;">SO</span>FITEL
+                <small>HOTELS &amp; RESORTS</small>
+            </span>
+        </div>
+    </div>
+    <div style="text-align: center; margin-top: 50px;">
+        <a href="partners.html" class="hero-btn hero-btn-primary" style="padding: 14px 40px;"><i class="fas fa-arrow-left"></i> جميع الشركاء</a>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section">
+    <div class="cta-content animate-on-scroll">
+        <h2>هل لديك مشروع في <span>البال</span>؟</h2>
+        <p>نحن هنا لتحويل رؤيتك إلى واقع ملموس. تواصل معنا اليوم واحصل على استشارة مجانية لمشروعك القادم.</p>
+        <a href="contact.html" class="cta-btn">
+            <i class="fas fa-paper-plane"></i>
+            ابدأ مشروعك الآن
+        </a>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer" id="contact">
     <div class="footer-grid">
         <div>
             <div class="footer-brand">
@@ -99,12 +488,11 @@
             </div>
             <p class="footer-desc">نقدم حلولاً متكاملة في مجال البناء والتشطيب والتأثيث، بأعلى معايير الجودة والإتقان.</p>
             <div class="footer-social">
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fas fa-envelope"></i></a>
-                <a href="#"><i class="fas fa-phone"></i></a>
+                <a href="https://instagram.com/carpenter_touth" target="_blank" aria-label="انستغرام"><i class="fab fa-instagram"></i></a>
+                <a href="mailto:info@carpenter-touch.com" aria-label="البريد الإلكتروني"><i class="fas fa-envelope"></i></a>
+                <a href="tel:0506786367" aria-label="الهاتف"><i class="fas fa-phone"></i></a>
             </div>
         </div>
-
         <div>
             <h4>روابط سريعة</h4>
             <ul class="footer-links">
@@ -114,7 +502,6 @@
                 <li><a href="partners.html">شركاؤنا</a></li>
             </ul>
         </div>
-
         <div>
             <h4>خدماتنا</h4>
             <ul class="footer-links">
@@ -124,20 +511,31 @@
                 <li><a href="expertise.html">التخصصات</a></li>
             </ul>
         </div>
-
         <div>
             <h4>تواصل معنا</h4>
-            <div class="footer-contact-item"><i class="fas fa-envelope"></i> info@carpenter-touch.com</div>
-            <div class="footer-contact-item"><i class="fas fa-phone"></i> 0506786367</div>
-            <div class="footer-contact-item"><i class="fab fa-instagram"></i> @carpenter_touth</div>
+            <div class="footer-contact-item">
+                <i class="fas fa-envelope"></i>
+                <span>info@carpenter-touch.com</span>
+            </div>
+            <div class="footer-contact-item">
+                <i class="fas fa-envelope"></i>
+                <span>Mohammed@carpenter-touch.com</span>
+            </div>
+            <div class="footer-contact-item">
+                <i class="fas fa-phone"></i>
+                <span>0506786367</span>
+            </div>
+            <div class="footer-contact-item">
+                <i class="fab fa-instagram"></i>
+                <span>@carpenter_touth</span>
+            </div>
         </div>
     </div>
-
     <div class="footer-bottom">
-        &copy; 2026 شركة لمسة للمقاولات العامة | جميع الحقوق محفوظة.
+        <p>&copy; 2026 شركة لمسة للمقاولات العامة | Lamssa General Contracting. جميع الحقوق محفوظة.</p>
     </div>
 </footer>
 
-<script src="../public/js/main.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
