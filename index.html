@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>شركة لمسة للمقاولات العامة | Lamssa General Contracting</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+:root {
+    --gold: #C9A96E;
+    --gold-light: #E0C99A;
+    --gold-dark: #A88B4A;
+    --gold-glow: rgba(201, 169, 110, 0.3);
+    --dark: #0F0E0D;
+    --dark-secondary: #1A1817;
+    --gray: #F7F5F2;
+    --gray-light: #FCFBF9;
+    --white: #FFFFFF;
+    --text-body: #4A4643;
+    --text-light: #8A8682;
+    --shadow-sm: 0 4px 20px rgba(0,0,0,0.06);
+    --shadow-md: 0 12px 40px rgba(0,0,0,0.08);
+    --shadow-lg: 0 30px 80px rgba(0,0,0,0.12);
+    --radius-sm: 12px;
+    --radius-md: 20px;
+    --radius-lg: 28px;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Tajawal', sans-serif; background: var(--gray-light); color: var(--dark); overflow-x: hidden; line-height: 1.7; }
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--gray); }
+::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 10px; }
+img { max-width: 100%; display: block; }
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+
+@keyframes fadeUp { from { opacity: 0; transform: translateY(60px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes scaleIn { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
+@keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
+@keyframes pulse { 0%,100% { box-shadow: 0 0 0 0 rgba(201,169,110,0.4); } 50% { box-shadow: 0 0 0 20px rgba(201,169,110,0); } }
+@keyframes shimmer { 0% { background-position: -200% center; } 100% { background-position: 200% center; } }
+
+.animate-on-scroll { opacity: 0; transform: translateY(50px); transition: all 1s cubic-bezier(0.23,1,0.32,1); }
+.animate-on-scroll.visible { opacity: 1; transform: translateY(0); }
+.animate-delay-1 { transition-delay: 0.1s; }
+.animate-delay-2 { transition-delay: 0.2s; }
+.animate-delay-3 { transition-delay: 0.3s; }
+.animate-delay-4 { transition-delay: 0.4s; }
+
+.preloader { position: fixed; inset: 0; background: var(--dark); z-index: 99999; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 24px; transition: opacity 0.8s ease, visibility 0.8s ease; }
+.preloader.hidden { opacity: 0; visibility: hidden; }
+.preloader-logo { width: 80px; height: 80px; border: 3px solid var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; font-weight: 900; color: var(--gold); animation: pulse 2s infinite; }
+.preloader-bar { width: 200px; height: 3px; background: rgba(201,169,110,0.2); border-radius: 10px; overflow: hidden; }
+.preloader-bar-fill { height: 100%; background: var(--gold); width: 0%; transition: width 1.5s ease; border-radius: 10px; }
+.preloader-text { color: var(--gold-light); font-size: 0.9rem; letter-spacing: 4px; }
+
+.navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 18px 0; background: rgba(255,255,255,0.85); backdrop-filter: blur(30px) saturate(180%); -webkit-backdrop-filter: blur(30px) saturate(180%); border-bottom: 1px solid rgba(201,169,110,0.1); transition: all 0.5s cubic-bezier(0.23,1,0.32,1); }
+.navbar.scrolled { padding: 10px 0; box-shadow: 0 8px 40px rgba(0,0,0,0.08); background: rgba(255,255,255,0.95); }
+.nav-container { max-width: 1400px; margin: 0 auto; padding: 0 40px; display: flex; justify-content: space-between; align-items: center; }
+.nav-logo { display: flex; align-items: center; gap: 14px; font-weight: 900; font-size: 1.5rem; color: var(--dark); transition: transform 0.3s ease; }
+.nav-logo:hover { transform: scale(1.02); }
+.nav-logo-icon { width: 50px; height: 50px; background: linear-gradient(145deg, var(--gold), var(--gold-dark)); border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; color: #fff; font-weight: 900; box-shadow: 0 8px 24px rgba(201,169,110,0.35); transition: all 0.4s ease; }
+.nav-logo:hover .nav-logo-icon { transform: scale(1.08) rotate(-4deg); box-shadow: 0 12px 32px rgba(201,169,110,0.45); }
+.nav-logo span { color: var(--gold); }
+
+.nav-links { display: flex; gap: 36px; align-items: center; }
+.nav-links a { font-weight: 600; font-size: 0.95rem; color: var(--dark-secondary); position: relative; padding: 6px 0; transition: color 0.3s ease; }
+.nav-links a::after { content: ''; position: absolute; bottom: -2px; right: 0; width: 0; height: 2.5px; background: var(--gold); border-radius: 4px; transition: width 0.4s cubic-bezier(0.23,1,0.32,1); }
+.nav-links a:hover { color: var(--gold); }
+.nav-links a:hover::after { width: 100%; }
+.nav-links .nav-cta { background: linear-gradient(145deg, var(--gold), var(--gold-dark)); color: #fff !important; padding: 12px 30px; border-radius: 50px; font-weight: 700; transition: all 0.4s ease; box-shadow: 0 8px 24px rgba(201,169,110,0.3); position: relative; overflow: hidden; }
+.nav-links .nav-cta::after { display: none; }
+.nav-links .nav-cta::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent); transition: left 0.6s ease; }
+.nav-links .nav-cta:hover { transform: translateY(-3px); box-shadow: 0 16px 40px rgba(201,169,110,0.4); }
+.nav-links .nav-cta:hover::before { left: 100%; }
+
+.mobile-menu-btn { display: none; background: none; border: none; font-size: 1.6rem; color: var(--dark); cursor: pointer; padding: 8px; width: 44px; height: 44px; border-radius: 12px; transition: all 0.3s ease; }
+.mobile-menu-btn:hover { background: var(--gray); }
+
+.mobile-menu { position: fixed; top: 0; right: -100%; width: 85%; max-width: 400px; height: 100vh; background: var(--white); z-index: 2000; padding: 100px 40px 40px; transition: right 0.5s cubic-bezier(0.23,1,0.32,1); box-shadow: -30px 0 80px rgba(0,0,0,0.12); overflow-y: auto; }
+.mobile-menu.active { right: 0; }
+.mobile-menu-close { position: absolute; top: 24px; left: 24px; background: var(--gray); border: none; width: 48px; height: 48px; border-radius: 50%; font-size: 1.3rem; cursor: pointer; color: var(--dark); display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; }
+.mobile-menu-close:hover { background: var(--gold); color: #fff; transform: rotate(90deg); }
+.mobile-menu-links li { margin-bottom: 28px; }
+.mobile-menu-links a { font-size: 1.25rem; font-weight: 700; color: var(--dark); transition: all 0.3s ease; display: block; padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.05); }
+.mobile-menu-links a:hover { color: var(--gold); padding-right: 12px; }
+.mobile-menu-links .mobile-cta { background: linear-gradient(145deg, var(--gold), var(--gold-dark)); color: #fff !important; padding: 16px 32px; border-radius: 50px; text-align: center; margin-top: 24px; font-size: 1.1rem; border: none; }
+.mobile-menu-links .mobile-cta:hover { padding-right: 0; }
+
+.overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1500; opacity: 0; visibility: hidden; transition: all 0.4s ease; backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
+.overlay.active { opacity: 1; visibility: visible; }
+
+.hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; position: relative; padding: 140px 40px 100px; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 40%, #0f3460 70%, #1a1a2e 100%); overflow: hidden; }
+.hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 20% 80%, rgba(201,169,110,0.08) 0%, transparent 50%), radial-gradient(ellipse at 80% 20%, rgba(201,169,110,0.06) 0%, transparent 40%); pointer-events: none; }
+.hero::after { content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 200px; background: linear-gradient(to top, var(--gray-light), transparent); pointer-events: none; }
+
+.hero-particles { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+.particle { position: absolute; width: 4px; height: 4px; background: var(--gold); border-radius: 50%; opacity: 0.3; animation: float 6s ease-in-out infinite; }
+.particle:nth-child(1) { top: 20%; left: 10%; animation-delay: 0s; animation-duration: 8s; }
+.particle:nth-child(2) { top: 60%; left: 20%; animation-delay: 1s; animation-duration: 10s; width: 6px; height: 6px; }
+.particle:nth-child(3) { top: 30%; left: 80%; animation-delay: 2s; animation-duration: 7s; }
+.particle:nth-child(4) { top: 70%; left: 70%; animation-delay: 0.5s; animation-duration: 9s; width: 3px; height: 3px; }
+.particle:nth-child(5) { top: 15%; left: 50%; animation-delay: 1.5s; animation-duration: 11s; width: 5px; height: 5px; }
+.particle:nth-child(6) { top: 80%; left: 40%; animation-delay: 2.5s; animation-duration: 8s; }
+
+.hero-content { position: relative; z-index: 2; text-align: center; max-width: 900px; margin: 0 auto; }
+
+.hero-badge { display: inline-flex; align-items: center; gap: 10px; padding: 10px 24px; background: rgba(201,169,110,0.12); border: 1px solid rgba(201,169,110,0.25); border-radius: 60px; color: var(--gold-light); font-size: 0.9rem; font-weight: 600; margin-bottom: 32px; backdrop-filter: blur(10px); animation: fadeUp 1s ease 0.3s both; }
+.hero-badge i { color: var(--gold); }
+
+.hero-logo { display: inline-flex; align-items: center; justify-content: center; width: 110px; height: 110px; background: linear-gradient(145deg, rgba(201,169,110,0.2), rgba(201,169,110,0.05)); backdrop-filter: blur(12px); border-radius: 50%; border: 2px solid rgba(201,169,110,0.4); margin-bottom: 36px; font-size: 3.5rem; font-weight: 900; color: var(--gold); text-shadow: 0 4px 20px rgba(201,169,110,0.3); box-shadow: 0 20px 60px rgba(201,169,110,0.15), inset 0 0 30px rgba(201,169,110,0.05); transition: all 0.5s ease; animation: fadeUp 1s ease 0.5s both; }
+.hero-logo:hover { transform: scale(1.08) rotate(-4deg); box-shadow: 0 30px 80px rgba(201,169,110,0.25), inset 0 0 40px rgba(201,169,110,0.1); }
+
+.hero-title-ar { font-size: 4.8rem; font-weight: 900; color: #fff; line-height: 1.15; letter-spacing: -1px; text-shadow: 0 4px 30px rgba(0,0,0,0.3); margin-bottom: 12px; animation: fadeUp 1s ease 0.7s both; }
+.hero-title-ar span { background: linear-gradient(90deg, var(--gold), var(--gold-light), var(--gold)); background-size: 200% auto; -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; animation: shimmer 3s linear infinite; }
+
+.hero-title-en { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 500; color: rgba(255,255,255,0.6); letter-spacing: 8px; text-transform: uppercase; margin-bottom: 30px; animation: fadeUp 1s ease 0.9s both; }
+
+.hero-divider { width: 80px; height: 3px; background: linear-gradient(90deg, transparent, var(--gold), transparent); margin: 0 auto 30px; border-radius: 4px; animation: scaleIn 1s ease 1s both; }
+
+.hero-year { display: inline-block; font-size: 4rem; font-weight: 900; color: rgba(201,169,110,0.9); letter-spacing: 6px; padding: 12px 48px; border: 2px solid rgba(201,169,110,0.3); border-radius: 60px; backdrop-filter: blur(8px); background: rgba(201,169,110,0.05); box-shadow: 0 8px 32px rgba(0,0,0,0.2); margin-bottom: 40px; transition: all 0.4s ease; animation: fadeUp 1s ease 1.1s both; }
+.hero-year:hover { background: rgba(201,169,110,0.12); border-color: rgba(201,169,110,0.5); transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.3); }
+
+.hero-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; animation: fadeUp 1s ease 1.3s both; }
+.hero-btn { display: inline-flex; align-items: center; gap: 10px; padding: 16px 40px; border-radius: 60px; font-weight: 700; font-size: 1.05rem; transition: all 0.4s ease; cursor: pointer; border: none; font-family: inherit; }
+.hero-btn-primary { background: linear-gradient(145deg, var(--gold), var(--gold-dark)); color: #fff; box-shadow: 0 8px 30px rgba(201,169,110,0.35); }
+.hero-btn-primary:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(201,169,110,0.45); }
+.hero-btn-secondary { background: rgba(255,255,255,0.08); backdrop-filter: blur(10px); border: 1.5px solid rgba(255,255,255,0.2); color: #fff; }
+.hero-btn-secondary:hover { background: rgba(255,255,255,0.15); border-color: rgba(255,255,255,0.4); transform: translateY(-4px); }
+
+.hero-scroll { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 8px; color: rgba(255,255,255,0.4); font-size: 0.8rem; letter-spacing: 2px; animation: fadeUp 1s ease 1.5s both; cursor: pointer; transition: color 0.3s ease; }
+.hero-scroll:hover { color: var(--gold); }
+.hero-scroll i { font-size: 1.2rem; animation: float 2s ease-in-out infinite; }
+
+.stats-bar { background: var(--white); padding: 50px 40px; position: relative; z-index: 10; margin-top: -60px; max-width: 1100px; margin-left: auto; margin-right: auto; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; text-align: center; }
+.stat-item { position: relative; }
+.stat-item:not(:last-child)::after { content: ''; position: absolute; left: 0; top: 50%; transform: translateY(-50%); width: 1px; height: 50px; background: linear-gradient(to bottom, transparent, var(--gold-light), transparent); }
+.stat-number { font-size: 3rem; font-weight: 900; color: var(--gold); line-height: 1; margin-bottom: 8px; }
+.stat-label { font-size: 0.95rem; color: var(--text-light); font-weight: 600; }
+
+.section { padding: 120px 40px; position: relative; }
+.section-header { text-align: center; margin-bottom: 70px; }
+.section-label { display: inline-flex; align-items: center; gap: 8px; padding: 8px 24px; background: linear-gradient(145deg, var(--gold), var(--gold-dark)); color: #fff; font-weight: 700; font-size: 0.8rem; border-radius: 60px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 20px; }
+.section-title { font-size: 3rem; font-weight: 900; color: var(--dark); line-height: 1.2; }
+.section-title span { background: linear-gradient(90deg, var(--gold), var(--gold-dark)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.section-subtitle { font-size: 1.15rem; color: var(--text-light); max-width: 600px; margin: 16px auto 0; line-height: 1.8; }
+
+.about { background: var(--white); }
+.about-grid { max-width: 1300px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+.about-image-wrap { position: relative; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-lg); }
+.about-image-wrap img { width: 100%; height: 560px; object-fit: cover; transition: transform 0.8s ease; }
+.about-image-wrap:hover img { transform: scale(1.05); }
+.about-image-wrap::after { content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 50%; background: linear-gradient(to top, rgba(0,0,0,0.3), transparent); }
+.about-image-badge { position: absolute; bottom: 30px; right: 30px; background: rgba(255,255,255,0.95); backdrop-filter: blur(12px); padding: 16px 32px; border-radius: 60px; font-weight: 700; color: var(--dark); box-shadow: 0 8px 30px rgba(0,0,0,0.1); display: flex; align-items: center; gap: 12px; z-index: 2; font-size: 1rem; }
+.about-image-badge i { color: var(--gold); font-size: 1.3rem; }
+
+.about-text h3 { font-size: 2.2rem; font-weight: 800; color: var(--gold-dark); margin-bottom: 20px; line-height: 1.3; }
+.about-text p { font-size: 1.1rem; line-height: 2; color: var(--text-body); margin-bottom: 20px; }
+.about-features { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 28px 0; }
+.about-feature { display: flex; align-items: center; gap: 12px; padding: 14px 18px; background: var(--gray); border-radius: 12px; border-right: 3px solid var(--gold); transition: all 0.3s ease; }
+.about-feature:hover { background: var(--gold-glow); transform: translateX(-4px); }
+.about-feature i { width: 36px; height: 36px; background: linear-gradient(145deg, var(--gold), var(--gold-dark)); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 0.9rem; flex-shrink: 0; }
+.about-feature span { font-weight: 700; font-size: 0.95rem; color: var(--dark); }
+.about-text .en { color: var(--text-light); font-size: 1rem; padding-top: 20px; border-top: 1px solid rgba(201,169,110,0.15); margin-top: 20px; line-height: 1.9; }
+
+.services { background: var(--gray); }
+.services-grid { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+.service-card { background: var(--white); border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-sm); transition: all 0.6s cubic-bezier(0.23,1,0.32,1); border: 1px solid rgba(201,169,110,0.06); position: relative; }
+.service-card:hover { transform: translateY(-16px); box-shadow: 0 30px 60px rgba(0,0,0,0.12); border-color: var(--gold-light); }
+.service-card-img { height: 260px; overflow: hidden; position: relative; }
+.service-card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s ease; }
+.service-card:hover .service-card-img img { transform: scale(1.1); }
+.service-card-img::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.4), transparent 60%); opacity: 0; transition: opacity 0.4s ease; }
+.service-card:hover .service-card-img::after { opacity: 1; }
+.service-card-icon { position: absolute; bottom: -28px; right: 28px; width: 56px; height: 56px; background: linear-gradient(145deg, var(--gold), var(--gold-dark)); border-radius: 16px; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 1.4rem; box-shadow: 0 8px 24px rgba(201,169,110,0.35); z-index: 2; transition: all 0.4s ease; }
+.service-card:hover .service-card-icon { transform: scale(1.1) rotate(-8deg); }
+.service-card-body { padding: 44px 28px 32px; }
+.service-card-body h3 { font-size: 1.5rem; font-weight: 800; color: var(--gold-dark); margin-bottom: 4px; }
+.service-card-body h3.en { font-size: 1.1rem; color: var(--text-light); font-weight: 600; margin-bottom: 12px; font-family: 'Playfair Display', serif; }
+.service-card-body p { color: var(--text-body); line-height: 1.9; font-size: 0.95rem; }
+.service-card-body p.en { color: var(--text-light); font-size: 0.9rem; padding-top: 12px; border-top: 1px solid rgba(0,0,0,0.05); margin-top: 12px; line-height: 1.7; }
+
+.expertise { background: var(--dark); color: #fff; position: relative; overflow: hidden; }
+.expertise::before { content: ''; position: absolute; top: -100px; right: -100px; width: 400px; height: 400px; background: radial-gradient(circle, rgba(201,169,110,0.06), transparent 70%); pointer-events: none; }
+.expertise .section-title { color: #fff; }
+.expertise .section-subtitle { color: rgba(255,255,255,0.5); }
+.expertise-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+.expertise-card { background: rgba(255,255,255,0.03); border-radius: var(--radius-md); padding: 40px 36px; border: 1px solid rgba(255,255,255,0.06); transition: all 0.5s cubic-bezier(0.23,1,0.32,1); position: relative; overflow: hidden; cursor: pointer; }
+.expertise-card::before { content: ''; position: absolute; top: 0; right: 0; width: 4px; height: 100%; background: var(--gold); transition: width 0.5s ease; }
+.expertise-card:hover::before { width: 100%; opacity: 0.06; }
+.expertise-card:hover { transform: translateX(-8px); border-color: var(--gold); background: rgba(255,255,255,0.06); }
+.expertise-card h3 { font-size: 1.35rem; font-weight: 800; color: var(--gold); margin-bottom: 14px; display: flex; align-items: center; gap: 16px; }
+.expertise-card h3 i { width: 48px; height: 48px; background: var(--gold); border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 1.3rem; flex-shrink: 0; transition: all 0.4s ease; }
+.expertise-card:hover h3 i { transform: scale(1.1) rotate(8deg); box-shadow: 0 8px 24px rgba(201,169,110,0.3); }
+.expertise-card p { color: rgba(255,255,255,0.65); line-height: 1.9; font-size: 0.95rem; padding-right: 64px; }
+.expertise-card p.ar { color: rgba(255,255,255,0.85); margin-bottom: 8px; }
+
+.vision-mission { background: var(--white); }
+.vm-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+.vm-card { background: var(--gray); border-radius: var(--radius-lg); padding: 52px 44px; position: relative; overflow: hidden; transition: all 0.5s ease; border: 2px solid transparent; }
+.vm-card:hover { border-color: var(--gold-light); box-shadow: var(--shadow-md); transform: translateY(-8px); }
+.vm-card::before { content: ''; position: absolute; top: -80px; right: -80px; width: 220px; height: 220px; background: var(--gold); opacity: 0.04; border-radius: 50%; transition: all 0.5s ease; }
+.vm-card:hover::before { opacity: 0.08; transform: scale(1.2); }
+.vm-icon { width: 72px; height: 72px; background: linear-gradient(145deg, var(--gold), var(--gold-dark)); border-radius: 20px; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; color: #fff; margin-bottom: 28px; box-shadow: 0 12px 32px rgba(201,169,110,0.25); transition: all 0.5s ease; }
+.vm-card:hover .vm-icon { transform: scale(1.1) rotate(-8deg); }
+.vm-card h3 { font-size: 1.7rem; font-weight: 800; color: var(--dark); margin-bottom: 4px; }
+.vm-card h3.ar { color: var(--gold-dark); font-size: 1.5rem; }
+.vm-card p { color: var(--text-body); line-height: 2; font-size: 1.05rem; margin-top: 10px; }
+.vm-card p.en { color: var(--text-light); font-size: 0.95rem; padding-top: 14px; border-top: 1px solid rgba(201,169,110,0.12); margin-top: 14px; line-height: 1.8; }
+
+.values { background: var(--gray); }
+.values-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(5, 1fr); gap: 24px; }
+.value-card { text-align: center; padding: 40px 24px; background: var(--white); border-radius: var(--radius-md); transition: all 0.6s cubic-bezier(0.23,1,0.32,1); border: 2px solid transparent; box-shadow: var(--shadow-sm); position: relative; overflow: hidden; }
+.value-card:hover { border-color: var(--gold); transform: translateY(-12px); box-shadow: var(--shadow-lg); }
+.value-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--gold), var(--gold-light)); transform: scaleX(0); transition: transform 0.5s ease; }
+.value-card:hover::before { transform: scaleX(1); }
+.value-icon { width: 72px; height: 72px; background: linear-gradient(145deg, var(--gold), var(--gold-dark)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 1.8rem; color: #fff; transition: all 0.6s ease; box-shadow: 0 8px 24px rgba(201,169,110,0.25); }
+.value-card:hover .value-icon { transform: rotateY(360deg) scale(1.1); box-shadow: 0 12px 32px rgba(201,169,110,0.35); }
+.value-card h4 { font-size: 1.1rem; font-weight: 800; color: var(--dark); margin-bottom: 4px; }
+.value-card h4.ar { color: var(--gold-dark); font-size: 1rem; }
+.value-card p { font-size: 0.88rem; color: var(--text-light); line-height: 1.6; margin-top: 6px; }
+
+.why-lamssa { background: linear-gradient(165deg, var(--dark) 0%, #0F0E0D 100%); color: #fff; position: relative; overflow: hidden; }
+.why-lamssa::before { content: ''; position: absolute; bottom: -150px; left: -150px; width: 500px; height: 500px; background: radial-gradient(circle, rgba(201,169,110,0.05), transparent 70%); pointer-events: none; }
+.why-lamssa .section-title { color: #fff; }
+.why-lamssa .section-subtitle { color: rgba(255,255,255,0.45); }
+.why-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+.why-card { background: rgba(255,255,255,0.03); border-radius: var(--radius-md); padding: 40px 28px; text-align: center; border: 1px solid rgba(255,255,255,0.06); transition: all 0.5s cubic-bezier(0.23,1,0.32,1); position: relative; overflow: hidden; }
+.why-card:hover { background: rgba(201,169,110,0.08); border-color: var(--gold); transform: translateY(-10px); }
+.why-number { font-size: 4rem; font-weight: 900; color: var(--gold); opacity: 0.12; position: absolute; top: 8px; right: 20px; line-height: 1; font-family: 'Playfair Display', serif; transition: opacity 0.3s ease; }
+.why-card:hover .why-number { opacity: 0.25; }
+.why-icon { width: 56px; height: 56px; background: linear-gradient(145deg, var(--gold), var(--gold-dark)); border-radius: 16px; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; font-size: 1.4rem; color: #fff; transition: all 0.4s ease; }
+.why-card:hover .why-icon { transform: scale(1.15) rotate(8deg); box-shadow: 0 8px 24px rgba(201,169,110,0.3); }
+.why-card h3 { font-size: 1.15rem; font-weight: 700; color: var(--gold); margin-bottom: 10px; }
+.why-card h3.ar { font-size: 1.05rem; }
+.why-card p { color: rgba(255,255,255,0.55); font-size: 0.9rem; line-height: 1.7; }
+
+.projects { background: var(--white); }
+.projects-grid { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.project-item { position: relative; border-radius: var(--radius-sm); overflow: hidden; height: 320px; cursor: pointer; box-shadow: var(--shadow-sm); transition: all 0.6s cubic-bezier(0.23,1,0.32,1); }
+.project-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 1s ease; }
+.project-item:hover { box-shadow: var(--shadow-lg); transform: translateY(-8px); }
+.project-item:hover img { transform: scale(1.12); }
+.project-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.2) 50%, transparent 100%); display: flex; flex-direction: column; justify-content: flex-end; padding: 28px; opacity: 0; transition: opacity 0.5s ease; }
+.project-item:hover .project-overlay { opacity: 1; }
+.project-overlay span { color: #fff; font-weight: 700; font-size: 1.15rem; letter-spacing: 0.5px; transform: translateY(20px); transition: transform 0.5s ease; }
+.project-item:hover .project-overlay span { transform: translateY(0); }
+.project-overlay .project-tag { display: inline-block; padding: 4px 14px; background: var(--gold); color: var(--dark); font-size: 0.75rem; font-weight: 700; border-radius: 20px; margin-bottom: 10px; width: fit-content; transform: translateY(20px); transition: transform 0.5s ease 0.1s; }
+.project-item:hover .project-overlay .project-tag { transform: translateY(0); }
+
+.testimonials { background: linear-gradient(135deg, var(--gray) 0%, var(--white) 100%); padding: 120px 40px; }
+.testimonials-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+.testimonial-card { background: var(--white); border-radius: var(--radius-md); padding: 40px 32px; box-shadow: var(--shadow-sm); border: 1px solid rgba(201,169,110,0.08); transition: all 0.5s ease; position: relative; }
+.testimonial-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-md); border-color: var(--gold-light); }
+.testimonial-card::before { content: '"'; position: absolute; top: 20px; right: 24px; font-family: 'Playfair Display', serif; font-size: 5rem; color: var(--gold); opacity: 0.15; line-height: 1; }
+.testimonial-stars { display: flex; gap: 4px; margin-bottom: 16px; }
+.testimonial-stars i { color: var(--gold); font-size: 0.9rem; }
+.testimonial-text { font-size: 1rem; line-height: 1.9; color: var(--text-body); margin-bottom: 24px; }
+.testimonial-author { display: flex; align-items: center; gap: 14px; }
+.testimonial-avatar { width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(145deg, var(--gold), var(--gold-dark)); display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 700; font-size: 1.1rem; }
+.testimonial-info h4 { font-weight: 800; font-size: 1rem; color: var(--dark); }
+.testimonial-info span { font-size: 0.85rem; color: var(--text-light); }
+
+.partners { background: var(--gray); padding: 100px 40px; }
+.partners-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; align-items: center; }
+.partner-item { display: flex; align-items: center; justify-content: center; padding: 36px 24px; background: var(--white); border-radius: var(--radius-sm); transition: all 0.5s cubic-bezier(0.23,1,0.32,1); height: 120px; box-shadow: var(--shadow-sm); border: 1px solid rgba(201,169,110,0.06); text-align: center; font-weight: 700; color: var(--dark-secondary); position: relative; overflow: hidden; }
+.partner-item::before { content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 3px; background: linear-gradient(90deg, var(--gold), var(--gold-light)); transform: scaleX(0); transition: transform 0.5s ease; }
+.partner-item:hover { transform: translateY(-8px); box-shadow: var(--shadow-md); border-color: var(--gold-light); }
+.partner-item:hover::before { transform: scaleX(1); }
+.partner-item .logo-text { font-weight: 700; font-size: 1rem; line-height: 1.4; }
+.partner-item .logo-text small { display: block; font-weight: 400; font-size: 0.75rem; color: var(--text-light); letter-spacing: 1px; margin-top: 4px; }
+
+.cta-section { background: linear-gradient(135deg, var(--dark) 0%, var(--dark-secondary) 100%); padding: 100px 40px; text-align: center; position: relative; overflow: hidden; }
+.cta-content { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; }
+.cta-section h2 { font-size: 2.8rem; font-weight: 900; color: #fff; margin-bottom: 16px; }
+.cta-section h2 span { color: var(--gold); }
+.cta-section p { color: rgba(255,255,255,0.6); font-size: 1.15rem; margin-bottom: 36px; line-height: 1.8; }
+.cta-btn { display: inline-flex; align-items: center; gap: 12px; padding: 18px 48px; background: linear-gradient(145deg, var(--gold), var(--gold-dark)); color: #fff; font-weight: 700; font-size: 1.1rem; border-radius: 60px; transition: all 0.4s ease; box-shadow: 0 12px 40px rgba(201,169,110,0.35); border: none; cursor: pointer; font-family: inherit; }
+.cta-btn:hover { transform: translateY(-4px); box-shadow: 0 20px 50px rgba(201,169,110,0.45); }
+
+.footer { background: var(--dark); color: #fff; padding: 80px 40px 30px; position: relative; }
+.footer-grid { max-width: 1300px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1.2fr; gap: 50px; margin-bottom: 50px; }
+.footer-brand { display: flex; align-items: center; gap: 14px; margin-bottom: 20px; }
+.footer-brand-icon { width: 52px; height: 52px; background: linear-gradient(145deg, var(--gold), var(--gold-dark)); border-radius: 14px; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 1.2rem; color: #fff; box-shadow: 0 8px 24px rgba(201,169,110,0.25); }
+.footer-brand-text { font-weight: 800; font-size: 1.3rem; }
+.footer-desc { color: rgba(255,255,255,0.45); line-height: 1.9; font-size: 0.95rem; max-width: 340px; }
+.footer-social { display: flex; gap: 12px; margin-top: 24px; }
+.footer-social a { width: 44px; height: 44px; background: rgba(255,255,255,0.06); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.55); transition: all 0.4s ease; font-size: 1.1rem; border: 1px solid rgba(255,255,255,0.06); }
+.footer-social a:hover { background: var(--gold); color: #fff; transform: translateY(-4px); border-color: var(--gold); box-shadow: 0 8px 24px rgba(201,169,110,0.25); }
+
+.footer h4 { color: var(--gold); font-size: 1.15rem; font-weight: 700; margin-bottom: 24px; position: relative; padding-bottom: 12px; }
+.footer h4::after { content: ''; position: absolute; bottom: 0; right: 0; width: 40px; height: 2px; background: var(--gold); border-radius: 2px; }
+.footer-links li { margin-bottom: 14px; }
+.footer-links a { color: rgba(255,255,255,0.4); transition: all 0.3s ease; font-size: 0.95rem; display: flex; align-items: center; gap: 8px; }
+.footer-links a::before { content: ''; width: 6px; height: 6px; background: var(--gold); border-radius: 50%; opacity: 0; transition: opacity 0.3s ease; }
+.footer-links a:hover { color: var(--gold); padding-right: 8px; }
+.footer-links a:hover::before { opacity: 1; }
+.footer-contact-item { display: flex; align-items: center; gap: 12px; color: rgba(255,255,255,0.4); margin-bottom: 14px; font-size: 0.92rem; transition: all 0.3s ease; }
+.footer-contact-item:hover { color: var(--gold); }
+.footer-contact-item i { color: var(--gold); width: 20px; font-size: 1rem; }
+
+.footer-bottom { border-top: 1px solid rgba(255,255,255,0.06); padding-top: 28px; text-align: center; color: rgba(255,255,255,0.25); font-size: 0.85rem; max-width: 1300px; margin: 0 auto; }
+
+@media (max-width: 1200px) {
+    .hero-title-ar { font-size: 3.8rem; }
+    .hero-title-en { font-size: 1.4rem; }
+    .hero-year { font-size: 3.2rem; }
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
+    .values-grid { grid-template-columns: repeat(3, 1fr); }
+    .why-grid { grid-template-columns: repeat(2, 1fr); }
+    .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
+    .stats-bar { grid-template-columns: repeat(2, 1fr); }
+    .stat-item:nth-child(3)::after, .stat-item:nth-child(1)::after { display: none; }
+}
+
+@media (max-width: 992px) {
+    .about-grid { grid-template-columns: 1fr; gap: 50px; }
+    .about-image-wrap img { height: 420px; }
+    .vm-grid { grid-template-columns: 1fr; }
+    .partners-grid { grid-template-columns: repeat(2, 1fr); }
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+    .expertise-grid { grid-template-columns: 1fr; }
+    .cta-section h2 { font-size: 2.2rem; }
+}
+
+@media (max-width: 768px) {
+    .nav-links { display: none; }
+    .mobile-menu-btn { display: block; }
+    .hero { padding: 120px 24px 80px; }
+    .hero-title-ar { font-size: 2.6rem; }
+    .hero-title-en { font-size: 1.1rem; letter-spacing: 4px; }
+    .hero-year { font-size: 2.4rem; padding: 8px 28px; }
+    .hero-logo { width: 90px; height: 90px; font-size: 2.8rem; }
+    .hero-buttons { flex-direction: column; align-items: center; }
+    .hero-btn { width: 100%; max-width: 280px; justify-content: center; }
+    .stats-bar { grid-template-columns: 1fr; margin-top: -40px; padding: 40px 24px; }
+    .stat-item::after { display: none !important; }
+    .stat-item { padding: 16px 0; border-bottom: 1px solid rgba(201,169,110,0.1); }
+    .stat-item:last-child { border-bottom: none; }
+    .section { padding: 80px 24px; }
+    .section-title { font-size: 2.2rem; }
+    .section-subtitle { font-size: 1rem; }
+    .services-grid { grid-template-columns: 1fr; }
+    .values-grid { grid-template-columns: repeat(2, 1fr); }
+    .why-grid { grid-template-columns: 1fr; }
+    .projects-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+    .project-item { height: 240px; }
+    .testimonials-grid { grid-template-columns: 1fr; }
+    .partners-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    .partner-item { height: 100px; padding: 24px 16px; }
+    .footer-grid { grid-template-columns: 1fr; text-align: center; gap: 40px; }
+    .footer-desc { max-width: 100%; }
+    .footer-social { justify-content: center; }
+    .footer-contact-item { justify-content: center; }
+    .footer h4::after { right: 50%; transform: translateX(50%); }
+    .expertise-card p { padding-right: 0; }
+    .expertise-card h3 { flex-wrap: wrap; }
+    .about-features { grid-template-columns: 1fr; }
+    .about-image-badge { bottom: 16px; right: 16px; padding: 10px 20px; font-size: 0.85rem; }
+}
+
+@media (max-width: 480px) {
+    .hero-title-ar { font-size: 2rem; }
+    .hero-title-en { font-size: 0.9rem; letter-spacing: 2px; }
+    .hero-year { font-size: 1.8rem; padding: 6px 20px; }
+    .hero-logo { width: 75px; height: 75px; font-size: 2.2rem; }
+    .projects-grid { grid-template-columns: 1fr; }
+    .project-item { height: 280px; }
+    .values-grid { grid-template-columns: 1fr; }
+    .partners-grid { grid-template-columns: 1fr 1fr; }
+    .partner-item { height: 90px; padding: 16px 10px; font-size: 0.85rem; }
+    .nav-container { padding: 0 20px; }
+    .section-title { font-size: 1.8rem; }
+    .cta-section h2 { font-size: 1.8rem; }
+}
+</style>
+</head>
+<body>
+
+<div class="preloader" id="preloader">
+    <div class="preloader-logo"></div>
+    <div class="preloader-bar"><div class="preloader-bar-fill" id="preloader-fill"></div></div>
+    <div class="preloader-text">جار التحميل...</div>
+</div>
+
+<nav class="navbar" id="navbar">
+    <div class="nav-container">
+        <a href="#" class="nav-logo">
+            <div class="nav-logo-icon"></div>
+            <span>لمسة <span>للمقاولات</span></span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="#about">من نحن</a></li>
+            <li><a href="#services">خدماتنا</a></li>
+            <li><a href="#expertise">تخصصاتنا</a></li>
+            <li><a href="#projects">مشاريعنا</a></li>
+            <li><a href="#partners">شركاؤنا</a></li>
+            <li><a href="#contact" class="nav-cta">تواصل معنا</a></li>
+        </ul>
+        <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="القائمة"><i class="fas fa-bars"></i></button>
+    </div>
+</nav>
+
+<div class="overlay" onclick="toggleMenu()"></div>
+<div class="mobile-menu">
+    <button class="mobile-menu-close" onclick="toggleMenu()" aria-label="إغلاق"><i class="fas fa-times"></i></button>
+    <ul class="mobile-menu-links">
+        <li><a href="#about" onclick="toggleMenu()">من نحن</a></li>
+        <li><a href="#services" onclick="toggleMenu()">خدماتنا</a></li>
+        <li><a href="#expertise" onclick="toggleMenu()">تخصصاتنا</a></li>
+        <li><a href="#projects" onclick="toggleMenu()">مشاريعنا</a></li>
+        <li><a href="#partners" onclick="toggleMenu()">شركاؤنا</a></li>
+        <li><a href="#contact" onclick="toggleMenu()" class="mobile-cta">تواصل معنا</a></li>
+    </ul>
+</div>
+
+<section class="hero" id="home">
+    <div class="hero-particles">
+        <div class="particle"></div><div class="particle"></div><div class="particle"></div>
+        <div class="particle"></div><div class="particle"></div><div class="particle"></div>
+    </div>
+    <div class="hero-content">
+        <div class="hero-badge"><i class="fas fa-star"></i> مقاول معتمد منذ 2009</div>
+        <div class="hero-logo">ل</div>
+        <h1 class="hero-title-ar">شركة <span>لمسة</span> للمقاولات العامة</h1>
+        <p class="hero-title-en">Lamssa General Contracting Company</p>
+        <div class="hero-divider"></div>
+        <div class="hero-year">2026</div>
+        <div class="hero-buttons">
+            <a href="#contact" class="hero-btn hero-btn-primary"><i class="fas fa-phone"></i> تواصل معنا</a>
+            <a href="#projects" class="hero-btn hero-btn-secondary"><i class="fas fa-images"></i> مشاريعنا</a>
+        </div>
+    </div>
+    <div class="hero-scroll" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">
+        <span>استكشف المزيد</span><i class="fas fa-chevron-down"></i>
+    </div>
+</section>
+
+<div class="stats-bar">
+    <div class="stat-item animate-on-scroll"><div class="stat-number" data-target="15">0</div><div class="stat-label">سنوات الخبرة</div></div>
+    <div class="stat-item animate-on-scroll animate-delay-1"><div class="stat-number" data-target="200">0</div><div class="stat-label">مشروع منجز</div></div>
+    <div class="stat-item animate-on-scroll animate-delay-2"><div class="stat-number" data-target="50">0</div><div class="stat-label">عميل راضٍ</div></div>
+    <div class="stat-item animate-on-scroll animate-delay-3"><div class="stat-number" data-target="120">0</div><div class="stat-label">فرد في الفريق</div></div>
+</div>
+
+<section class="section about" id="about">
+    <div class="section-header animate-on-scroll">
+        <span class="section-label"><i class="fas fa-building"></i> من نحن</span>
+        <h2 class="section-title">شركة <span>لمسة</span> للمقاولات</h2>
+        <p class="section-subtitle">رائدة في عالم البناء والتطوير العمراني</p>
+    </div>
+    <div class="about-grid">
+        <div class="about-image-wrap animate-on-scroll">
+            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&h=600&fit=crop&q=80" alt="مشروع بناء" loading="lazy" />
+            <div class="about-image-badge"><i class="fas fa-medal"></i> أكثر من 15 عاماً من التميز</div>
+        </div>
+        <div class="about-text animate-on-scroll">
+            <h3>شركة لمسة للمقاولات العامة</h3>
+            <p>شركة لمسة للمقاولات العامة هي كيان رائد في عالم البناء والتطوير العمراني، نقدم حلولاً متكاملة تبدأ من الفكرة والتصميم، وصولاً إلى التنفيذ والتسليم بأعلى درجات الإتقان. نؤمن بأن كل مشروع هو انعكاس لهوية عملائنا، لذلك نحرص على تحويل الرؤى إلى واقع معماري متكامل، يجمع بين الجودة الهندسية واللمسة الجمالية الراقية.</p>
+            <p>نعمل وفق منهجية احترافية قائمة على الدقة، والابتكار، والالتزام الصارم بأعلى المعايير العالمية في كل مرحلة من مراحل المشروع.</p>
+            <div class="about-features">
+                <div class="about-feature"><i class="fas fa-gem"></i><span>جودة عالمية</span></div>
+                <div class="about-feature"><i class="fas fa-lightbulb"></i><span>حلول مبتكرة</span></div>
+                <div class="about-feature"><i class="fas fa-clock"></i><span>التزام بالمواعيد</span></div>
+                <div class="about-feature"><i class="fas fa-ruler-combined"></i><span>دقة في التنفيذ</span></div>
+            </div>
+            <p class="en">Lamssa General Contracting Company is a distinguished name in the construction and development sector, delivering fully integrated solutions that span from concept and design to execution and final handover with exceptional precision. We believe that every project reflects the identity of our clients, therefore we are committed to transforming visions into refined architectural realities that combine engineering excellence with aesthetic sophistication.</p>
+        </div>
+    </div>
+</section>
+
+<section class="section services" id="services">
+    <div class="section-header animate-on-scroll">
+        <span class="section-label"><i class="fas fa-tools"></i> خدماتنا</span>
+        <h2 class="section-title">ما نقدمه من <span>خدمات</span></h2>
+        <p class="section-subtitle">نقدم منظومة متكاملة من الخدمات عبر أقسام متخصصة</p>
+    </div>
+    <div class="services-grid">
+        <div class="service-card animate-on-scroll">
+            <div class="service-card-img">
+                <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600&h=400&fit=crop&q=80" alt="أعمال البناء" loading="lazy" />
+                <div class="service-card-icon"><i class="fas fa-hard-hat"></i></div>
+            </div>
+            <div class="service-card-body">
+                <h3>أعمال البناء</h3>
+                <h3 class="en">Construction</h3>
+                <p>تنفيذ المشاريع السكنية والتجارية وفق أعلى معايير الجودة، باستخدام أحدث التقنيات والمواد المعتمدة.</p>
+                <p class="en">Execution of residential and commercial projects in compliance with the highest quality standards, utilizing advanced technologies and certified materials.</p>
+            </div>
+        </div>
+        <div class="service-card animate-on-scroll animate-delay-1">
+            <div class="service-card-img">
+                <img src="https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?w=600&h=400&fit=crop&q=80" alt="أعمال التشطيب" loading="lazy" />
+                <div class="service-card-icon"><i class="fas fa-paint-roller"></i></div>
+            </div>
+            <div class="service-card-body">
+                <h3>أعمال التشطيب</h3>
+                <h3 class="en">Finishing Works</h3>
+                <p>تشطيبات داخلية وخارجية راقية تعكس الذوق المعماري الحديث، مع اهتمام بالغ بأدق التفاصيل.</p>
+                <p class="en">High-end interior and exterior finishing solutions that reflect contemporary architectural elegance, with meticulous attention to detail.</p>
+            </div>
+        </div>
+        <div class="service-card animate-on-scroll animate-delay-2">
+            <div class="service-card-img">
+                <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=600&h=400&fit=crop&q=80" alt="التأثيث والتجهيز" loading="lazy" />
+                <div class="service-card-icon"><i class="fas fa-couch"></i></div>
+            </div>
+            <div class="service-card-body">
+                <h3>التأثيث والتجهيز</h3>
+                <h3 class="en">Furnishing &amp; Fit-Out</h3>
+                <p>تصميم وتوريد وتنفيذ أعمال الأثاث والتجهيز بما يتماشى مع هوية المشروع ويحقق التكامل الوظيفي والجمالي.</p>
+                <p class="en">Comprehensive furnishing and fit-out solutions tailored to align with the project identity while achieving both functional and aesthetic harmony.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section expertise" id="expertise">
+    <div class="section-header animate-on-scroll">
+        <span class="section-label"><i class="fas fa-briefcase"></i> تخصصاتنا</span>
+        <h2 class="section-title">خبراتنا في <span>المجالات</span></h2>
+        <p class="section-subtitle">نتميز بخبرة واسعة في تنفيذ مشاريع متنوعة تشمل</p>
+    </div>
+    <div class="expertise-grid">
+        <div class="expertise-card animate-on-scroll">
+            <h3><i class="fas fa-hotel"></i> الفنادق</h3>
+            <p class="ar">تصميم وتنفيذ مشاريع فندقية فاخرة توفر تجربة ضيافة استثنائية.</p>
+            <p>Luxury hotel projects designed and executed to deliver outstanding hospitality experiences.</p>
+        </div>
+        <div class="expertise-card animate-on-scroll animate-delay-1">
+            <h3><i class="fas fa-building"></i> المباني السكنية</h3>
+            <p class="ar">إنشاء وحدات سكنية تجمع بين الراحة العصرية والتصميم الأنيق.</p>
+            <p>Residential developments that combine modern comfort with refined design.</p>
+        </div>
+        <div class="expertise-card animate-on-scroll animate-delay-2">
+            <h3><i class="fas fa-store"></i> المعارض</h3>
+            <p class="ar">تنفيذ مساحات عرض مبتكرة تعزز الهوية التجارية وتجذب العملاء.</p>
+            <p>Innovative exhibition and showroom spaces that enhance brand identity and customer engagement.</p>
+        </div>
+        <div class="expertise-card animate-on-scroll animate-delay-3">
+            <h3><i class="fas fa-briefcase"></i> المكاتب التجارية</h3>
+            <p class="ar">تصميم بيئات عمل احترافية تدعم الإنتاجية وتعكس صورة الشركات.</p>
+            <p>Professional office environments that boost productivity and reflect corporate identity.</p>
+        </div>
+    </div>
+</section>
+
+<section class="section vision-mission" id="vision">
+    <div class="section-header animate-on-scroll">
+        <span class="section-label"><i class="fas fa-compass"></i> رؤيتنا ورسالتنا</span>
+        <h2 class="section-title">نحو <span>المستقبل</span></h2>
+    </div>
+    <div class="vm-grid">
+        <div class="vm-card animate-on-scroll">
+            <div class="vm-icon"><i class="fas fa-eye"></i></div>
+            <h3 class="ar">رؤيتنا</h3>
+            <h3>Our Vision</h3>
+            <p>أن نكون مرجعاً رائداً في قطاع المقاولات العامة، من خلال تقديم مشاريع استثنائية تتجاوز التوقعات وتُحدث أثراً دائماً في المشهد العمراني.</p>
+            <p class="en">To become a leading benchmark in the contracting industry by delivering exceptional projects that exceed expectations and leave a lasting impact.</p>
+        </div>
+        <div class="vm-card animate-on-scroll animate-delay-1">
+            <div class="vm-icon"><i class="fas fa-bullseye"></i></div>
+            <h3 class="ar">رسالتنا</h3>
+            <h3>Our Mission</h3>
+            <p>نلتزم بتقديم حلول متكاملة ذات جودة عالية، من خلال فريق عمل متخصص، واتباع أفضل الممارسات العالمية، لضمان تحقيق أعلى مستويات رضا العملاء.</p>
+            <p class="en">We are committed to delivering high-quality, integrated solutions through a skilled team and best-in-class practices to ensure maximum client satisfaction.</p>
+        </div>
+    </div>
+</section>
+
+<section class="section values" id="values">
+    <div class="section-header animate-on-scroll">
+        <span class="section-label"><i class="fas fa-heart"></i> قيمنا</span>
+        <h2 class="section-title">مبادئنا <span>الأساسية</span></h2>
+    </div>
+    <div class="values-grid">
+        <div class="value-card animate-on-scroll">
+            <div class="value-icon"><i class="fas fa-award"></i></div>
+            <h4 class="ar">الجودة</h4>
+            <h4>Quality</h4>
+            <p>التزامنا بالإتقان في كل تفصيلة</p>
+        </div>
+        <div class="value-card animate-on-scroll animate-delay-1">
+            <div class="value-icon"><i class="fas fa-handshake"></i></div>
+            <h4 class="ar">الالتزام</h4>
+            <h4>Commitment</h4>
+            <p>احترام الوقت والوعود</p>
+        </div>
+        <div class="value-card animate-on-scroll animate-delay-2">
+            <div class="value-icon"><i class="fas fa-lightbulb"></i></div>
+            <h4 class="ar">الابتكار</h4>
+            <h4>Innovation</h4>
+            <p>حلول إبداعية متجددة</p>
+        </div>
+        <div class="value-card animate-on-scroll animate-delay-3">
+            <div class="value-icon"><i class="fas fa-shield-alt"></i></div>
+            <h4 class="ar">الشفافية</h4>
+            <h4>Transparency</h4>
+            <p>وضوح في التعامل</p>
+        </div>
+        <div class="value-card animate-on-scroll animate-delay-4">
+            <div class="value-icon"><i class="fas fa-heart"></i></div>
+            <h4 class="ar">رضا العميل</h4>
+            <h4>Satisfaction</h4>
+            <p>هدفنا الأول</p>
+        </div>
+    </div>
+</section>
+
+<section class="section why-lamssa" id="why">
+    <div class="section-header animate-on-scroll">
+        <span class="section-label"><i class="fas fa-trophy"></i> لماذا نحن</span>
+        <h2 class="section-title">لماذا <span style="color: var(--gold);">لمسة</span>؟</h2>
+        <p class="section-subtitle">خبرة مثبتة في قطاعات متعددة</p>
+    </div>
+    <div class="why-grid">
+        <div class="why-card animate-on-scroll">
+            <span class="why-number">01</span>
+            <div class="why-icon"><i class="fas fa-users"></i></div>
+            <h3 class="ar">فريق هندسي وفني عالي الكفاءة</h3>
+            <h3>Highly Qualified Teams</h3>
+            <p>فريق متخصص ذو خبرة واسعة في مجال المقاولات والتشطيبات</p>
+        </div>
+        <div class="why-card animate-on-scroll animate-delay-1">
+            <span class="why-number">02</span>
+            <div class="why-icon"><i class="fas fa-gem"></i></div>
+            <h3 class="ar">جودة تنفيذ تفوق التوقعات</h3>
+            <h3>Superior Quality</h3>
+            <p>التزام صارم بالجدول الزمني وجودة التنفيذ</p>
+        </div>
+        <div class="why-card animate-on-scroll animate-delay-2">
+            <span class="why-number">03</span>
+            <div class="why-icon"><i class="fas fa-clock"></i></div>
+            <h3 class="ar">التزام صارم بالجداول الزمنية</h3>
+            <h3>On-Time Delivery</h3>
+            <p>حلول متكاملة تحت سقف واحد من التصميم إلى التسليم</p>
+        </div>
+        <div class="why-card animate-on-scroll animate-delay-3">
+            <span class="why-number">04</span>
+            <div class="why-icon"><i class="fas fa-layer-group"></i></div>
+            <h3 class="ar">حلول متكاملة تحت سقف واحد</h3>
+            <h3>Integrated Solutions</h3>
+            <p>تجربة مثبتة في قطاعات متعددة من المشاريع</p>
+        </div>
+    </div>
+</section>
+
+<section class="section projects" id="projects">
+    <div class="section-header animate-on-scroll">
+        <span class="section-label"><i class="fas fa-images"></i> أعمالنا</span>
+        <h2 class="section-title">لمحة عن <span>مشاريعنا</span></h2>
+        <p class="section-subtitle">نفخر بتقديم مشاريع متنوعة تعكس جودتنا وإتقاننا</p>
+    </div>
+    <div class="projects-grid">
+        <div class="project-item animate-on-scroll">
+            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&h=400&fit=crop&q=80" alt="قاعة اجتماعات" loading="lazy" />
+            <div class="project-overlay">
+                <span class="project-tag">تشطيبات</span>
+                <span>قاعة اجتماعات فاخرة</span>
+            </div>
+        </div>
+        <div class="project-item animate-on-scroll animate-delay-1">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&h=400&fit=crop&q=80" alt="جناح فندقي" loading="lazy" />
+            <div class="project-overlay">
+                <span class="project-tag">فنادق</span>
+                <span>جناح فندقي راقٍ</span>
+            </div>
+        </div>
+        <div class="project-item animate-on-scroll animate-delay-2">
+            <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=600&h=400&fit=crop&q=80" alt="غرفة معيشة" loading="lazy" />
+            <div class="project-overlay">
+                <span class="project-tag">سكني</span>
+                <span>غرفة معيشة عصرية</span>
+            </div>
+        </div>
+        <div class="project-item animate-on-scroll">
+            <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=600&h=400&fit=crop&q=80" alt="مكتب تنفيذي" loading="lazy" />
+            <div class="project-overlay">
+                <span class="project-tag">تجاري</span>
+                <span>مكتب تنفيذي</span>
+            </div>
+        </div>
+        <div class="project-item animate-on-scroll animate-delay-1">
+            <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=600&h=400&fit=crop&q=80" alt="صالة استقبال" loading="lazy" />
+            <div class="project-overlay">
+                <span class="project-tag">تشطيبات</span>
+                <span>صالة استقبال</span>
+            </div>
+        </div>
+        <div class="project-item animate-on-scroll animate-delay-2">
+            <img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=600&h=400&fit=crop&q=80" alt="غرفة نوم" loading="lazy" />
+            <div class="project-overlay">
+                <span class="project-tag">سكني</span>
+                <span>غرفة نوم فاخرة</span>
+            </div>
+        </div>
+        <div class="project-item animate-on-scroll">
+            <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600&h=400&fit=crop&q=80" alt="مطعم فاخر" loading="lazy" />
+            <div class="project-overlay">
+                <span class="project-tag">تجاري</span>
+                <span>مطعم فاخر</span>
+            </div>
+        </div>
+        <div class="project-item animate-on-scroll animate-delay-1">
+            <img src="https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=600&h=400&fit=crop&q=80" alt="فيلا سكنية" loading="lazy" />
+            <div class="project-overlay">
+                <span class="project-tag">سكني</span>
+                <span>فيلا سكنية</span>
+            </div>
+        </div>
+        <div class="project-item animate-on-scroll animate-delay-2">
+            <img src="https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?w=600&h=400&fit=crop&q=80" alt="مكتب تجاري" loading="lazy" />
+            <div class="project-overlay">
+                <span class="project-tag">تجاري</span>
+                <span>مكتب تجاري</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="testimonials" id="testimonials">
+    <div class="section-header animate-on-scroll">
+        <span class="section-label"><i class="fas fa-comments"></i> آراء العملاء</span>
+        <h2 class="section-title">ما يقوله <span>عملاؤنا</span></h2>
+        <p class="section-subtitle">ثقة عملائنا هي أعلى شهادة على جودة أعمالنا</p>
+    </div>
+    <div class="testimonials-grid">
+        <div class="testimonial-card animate-on-scroll">
+            <div class="testimonial-stars">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <p class="testimonial-text">تعاملت مع شركة لمسة في مشروع فندقي كبير، وكانت النتائج مذهلة. الفريق محترف جداً والالتزام بالمواعيد كان ممتازاً.</p>
+            <div class="testimonial-author">
+                <div class="testimonial-avatar">م</div>
+                <div class="testimonial-info">
+                    <h4>محمد العتيبي</h4>
+                    <span>مدير عام - Kempinski Al Othman</span>
+                </div>
+            </div>
+        </div>
+        <div class="testimonial-card animate-on-scroll animate-delay-1">
+            <div class="testimonial-stars">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <p class="testimonial-text">الجودة والدقة في التنفيذ تجعل لمسة الخيار الأول لدينا في جميع مشاريعنا. فريق متعاون ومبدع.</p>
+            <div class="testimonial-author">
+                <div class="testimonial-avatar">أ</div>
+                <div class="testimonial-info">
+                    <h4>أحمد السالم</h4>
+                    <span>مهندس مشاريع - أرامكو السعودية</span>
+                </div>
+            </div>
+        </div>
+        <div class="testimonial-card animate-on-scroll animate-delay-2">
+            <div class="testimonial-stars">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <p class="testimonial-text">مشروع فيلتنا السكنية كان تحفة فنية بفضل لمسة. اهتمامهم بالتفاصيل الصغيرة يجعل الفرق الكبير.</p>
+            <div class="testimonial-author">
+                <div class="testimonial-avatar">خ</div>
+                <div class="testimonial-info">
+                    <h4>خالد الشمري</h4>
+                    <span>صاحب فيلا سكنية</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section partners" id="partners">
+    <div class="section-header animate-on-scroll">
+        <span class="section-label"><i class="fas fa-handshake"></i> شركاؤنا</span>
+        <h2 class="section-title">شركاء <span>النجاح</span></h2>
+        <p class="section-subtitle">نفخر بالتعاون مع كبرى المؤسسات والشركات</p>
+    </div>
+    <div class="partners-grid">
+        <div class="partner-item animate-on-scroll">
+            <span class="logo-text">الهيئة الملكية للجبيل وينبع</span>
+        </div>
+        <div class="partner-item animate-on-scroll animate-delay-1">
+            <span class="logo-text" style="color: #006C35; font-weight: 800;">أرامكو السعودية</span>
+        </div>
+        <div class="partner-item animate-on-scroll animate-delay-2">
+            <span class="logo-text" style="color: #0056A6; font-weight: 800; font-size: 1.5rem;">Haier</span>
+        </div>
+        <div class="partner-item animate-on-scroll animate-delay-3">
+            <span class="logo-text">دليل الشبكة <small>LEEL ALSHABAKA</small></span>
+        </div>
+        <div class="partner-item animate-on-scroll">
+            <span class="logo-text" style="color: #006D4C; font-weight: 800;">معادن <small>MA'ADEN</small></span>
+        </div>
+        <div class="partner-item animate-on-scroll animate-delay-1">
+            <span class="logo-text" style="color: #00A9A4; font-weight: 800;">المانع <small>almana</small></span>
+        </div>
+        <div class="partner-item animate-on-scroll animate-delay-2">
+            <span class="logo-text">
+                <i class="fas fa-horse" style="color: var(--gold); font-size: 1.4rem; display: block; margin-bottom: 4px;"></i>
+                Kempinski Al Othman Hotel
+            </span>
+        </div>
+        <div class="partner-item animate-on-scroll animate-delay-3">
+            <span class="logo-text" style="font-weight: 300; letter-spacing: 2px;">
+                <span style="color: var(--gold); font-weight: 700;">SO</span>FITEL
+                <small>HOTELS &amp; RESORTS</small>
+            </span>
+        </div>
+    </div>
+</section>
+
+<section class="cta-section">
+    <div class="cta-content animate-on-scroll">
+        <h2>هل لديك مشروع في <span>البال</span>؟</h2>
+        <p>نحن هنا لتحويل رؤيتك إلى واقع ملموس. تواصل معنا اليوم واحصل على استشارة مجانية لمشروعك القادم.</p>
+        <a href="#contact" class="cta-btn">
+            <i class="fas fa-paper-plane"></i>
+            ابدأ مشروعك الآن
+        </a>
+    </div>
+</section>
+
+<footer class="footer" id="contact">
+    <div class="footer-grid">
+        <div>
+            <div class="footer-brand">
+                <div class="footer-brand-icon">ل</div>
+                <div class="footer-brand-text">شركة لمسة للمقاولات</div>
+            </div>
+            <p class="footer-desc">نقدم حلولاً متكاملة في مجال البناء والتشطيب والتأثيث، بأعلى معايير الجودة والإتقان.</p>
+            <div class="footer-social">
+                <a href="https://instagram.com/carpenter_touth" target="_blank" aria-label="انستغرام"><i class="fab fa-instagram"></i></a>
+                <a href="mailto:info@carpenter-touch.com" aria-label="البريد الإلكتروني"><i class="fas fa-envelope"></i></a>
+                <a href="tel:0506786367" aria-label="الهاتف"><i class="fas fa-phone"></i></a>
+            </div>
+        </div>
+        <div>
+            <h4>روابط سريعة</h4>
+            <ul class="footer-links">
+                <li><a href="#about">من نحن</a></li>
+                <li><a href="#services">خدماتنا</a></li>
+                <li><a href="#projects">مشاريعنا</a></li>
+                <li><a href="#partners">شركاؤنا</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4>خدماتنا</h4>
+            <ul class="footer-links">
+                <li><a href="#services">أعمال البناء</a></li>
+                <li><a href="#services">أعمال التشطيب</a></li>
+                <li><a href="#services">التأثيث والتجهيز</a></li>
+                <li><a href="#expertise">التخصصات</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4>تواصل معنا</h4>
+            <div class="footer-contact-item">
+                <i class="fas fa-envelope"></i>
+                <span>info@carpenter-touch.com</span>
+            </div>
+            <div class="footer-contact-item">
+                <i class="fas fa-envelope"></i>
+                <span>Mohammed@carpenter-touch.com</span>
+            </div>
+            <div class="footer-contact-item">
+                <i class="fas fa-phone"></i>
+                <span>0506786367</span>
+            </div>
+            <div class="footer-contact-item">
+                <i class="fab fa-instagram"></i>
+                <span>@carpenter_touth</span>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2026 شركة لمسة للمقاولات العامة | Lamssa General Contracting. جميع الحقوق محفوظة.</p>
+    </div>
+</footer>
+
+<script>
+window.addEventListener('load', () => {
+    const fill = document.getElementById('preloader-fill');
+    fill.style.width = '100%';
+    setTimeout(() => {
+        document.getElementById('preloader').classList.add('hidden');
+    }, 1800);
+});
+
+function toggleMenu() {
+    document.querySelector('.mobile-menu').classList.toggle('active');
+    document.querySelector('.overlay').classList.toggle('active');
+    document.body.style.overflow = document.querySelector('.mobile-menu').classList.contains('active') ? 'hidden' : '';
+}
+
+document.querySelectorAll('.mobile-menu-links a').forEach(link => {
+    link.addEventListener('click', () => {
+        if (document.querySelector('.mobile-menu').classList.contains('active')) {
+            toggleMenu();
+        }
+    });
+});
+
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+    if (window.pageYOffset > 60) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+    }
+});
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (href === '#') return;
+        e.preventDefault();
+        const target = document.querySelector(href);
+        if (target) {
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    });
+});
+
+const observerOptions = {
+    threshold: 0.12,
+    rootMargin: '0px 0px -40px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+}, observerOptions);
+
+document.querySelectorAll('.animate-on-scroll').forEach(el => {
+    observer.observe(el);
+});
+
+const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
+            entry.target.classList.add('counted');
+            const target = parseInt(entry.target.dataset.target);
+            const duration = 2000;
+            const step = target / (duration / 16);
+            let current = 0;
+            const timer = setInterval(() => {
+                current += step;
+                if (current >= target) {
+                    entry.target.textContent = target + '+';
+                    clearInterval(timer);
+                } else {
+                    entry.target.textContent = Math.floor(current);
+                }
+            }, 16);
+        }
+    });
+}, { threshold: 0.5 });
+
+document.querySelectorAll('.stat-number').forEach(el => {
+    counterObserver.observe(el);
+});
+
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-links a:not(.nav-cta)');
+
+window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(section => {
+        const top = section.offsetTop - 120;
+        if (window.scrollY >= top) {
+            current = section.getAttribute('id');
+        }
+    });
+
+    navLinks.forEach(link => {
+        link.style.color = '';
+        if (link.getAttribute('href') === '#' + current) {
+            link.style.color = 'var(--gold)';
+        }
+    });
+});
+</script>
+</body>
+</html>
